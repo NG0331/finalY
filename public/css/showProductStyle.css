@@ -1,0 +1,52 @@
+html,main {
+    background-image: linear-gradient(rgba(241, 241, 241, 0.6),rgba(156, 154, 154, 0.6)),url("/image/background.PNG");
+    background-position: center;
+    background-size: cover;
+    background-position: absolute;
+    background-color: #323842;
+    min-height: 100vh;
+}
+
+h1 {
+    font-family: 'Teko', sans-serif;
+    color: rgb(83, 86, 88);
+    text-align: center;
+}
+
+.table {
+    font-family: 'Catamaran', sans-serif;
+}
+
+.table thead th {
+    border-bottom: none;
+}
+
+.table td, .table th {
+    border-top: none;
+}
+
+#table-head {
+    background-color: rgba(0, 119, 255, 0.493);
+    color: white;
+}
+
+tr td {
+    background-color: rgba(253, 250, 235, 0.596);
+}
+
+table, td, th, tr {
+    border: 3px solid rgba(0, 119, 255, 0.089);
+}
+
+tbody tr:hover {
+    background-color:  rgb(255, 255, 255);
+}
+
+.btn {
+    display: block;
+    margin: 10px;
+}
+
+ul.pagination li {
+    background-color: rgba(235, 235, 235, 0.712);
+}
