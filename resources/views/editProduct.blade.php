@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">  
 <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&family=Catamaran:wght@500&display=swap" rel="stylesheet">
 
-<h1>Edit Product jhgjgj</h1>
+<h1>Edit Product </h1>
 
 <div>
     <div style="text-align:center"> 
