@@ -4,9 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Green & River</title>
 
         <!-- Fonts -->
+        
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
         <!-- Styles -->
@@ -18,10 +19,61 @@
             body {
                 font-family: 'Nunito';
             }
+            * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 17px;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
         </style>
     </head>
     <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+        
+            <video  autoplay muted loop id="myVideo">
+  <source src="images/Inspiring Readers_ A Little Free Library Story (Full).mp4" type="video/mp4">
+
+</video>
+
+<div class="content">
+  <h1>Green & river Book Shop</h1>
+  <p>Great achievements and hard work are in direct proportion. There is a point of gain for every part of the work. With the accumulation of time, miracles can be created from little to more.</p>
+ 
+  <div class="relative flex items-top justify-center  dark:bg-gray-900 ">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
@@ -35,13 +87,11 @@
                     @endauth
                 </div>
             @endif
-<div>Hello</div>
-
-               
+</div>
 
 
                     <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                        G&R Book Shop
                     </div>
                 </div>
             </div>
