@@ -46,19 +46,14 @@ body {
   padding: 20px;
 }
 
-#myBtn {
-  width: 200px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  background: #000;
-  color: #fff;
-  cursor: pointer;
-}
 
-#myBtn:hover {
-  background: #ddd;
-  color: black;
+.button {
+  border: 1px solid #212121;
+  padding: 12px 40px;
+}
+.button:hover {
+  color: #e9e9e9;
+  background: #212121;
 }
         </style>
     </head>
@@ -88,6 +83,9 @@ body {
                 </div>
             @endif
 </div>
+<div >
+        <a href="{{ route('showCategory') }}" class="button">Continue</a>
+    </div>
 
 
                     <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
