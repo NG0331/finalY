@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/userProduct', function () {
+    return view('userProduct');
+});
 
 Route::get('/insertCategory', function () {
     return view('insertCategory');
@@ -29,6 +32,8 @@ Route::get('/insertLanguage', function () {
 Route::get('/contactus', function () {
     return view('contact');
 });
+
+Route::get('/userProduct', [App\Http\Controllers\HomeController::class, 'show'])->name('userProduct');
 
 //bookCategory
 
