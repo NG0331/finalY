@@ -6,6 +6,45 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+html,body{
+  min-height: 100%;
+  height: 100%;
+  padding:0px;
+  margin:0px;
+  background-color: white;
+}
+
+
+
+
+ /* Footer*/
+ footer{
+   display:flex;
+   align-items: flex-end ;
+ }
+.footer{
+   background:#303036;
+   color:#dee2e6;
+   height:400px;
+   position:relative;
+}
+.footer .footer-content{
+  border:1px solid red;
+  height: 350px;
+}
+.footer .footer-bottom{
+
+  background:#303036;
+  color:#df70cc;
+  font-size:medium;
+  height:50px;
+  width: 100%;
+  text-align: center;
+  position:absolute;
+  bottom:0px;
+  left:0px;
+  padding-top: 20px;
+}
  .fa {
   padding: 5px;
   font-size: 30px;
@@ -5272,7 +5311,9 @@ input[type=button].btn-block {
   list-style: none;
   border-radius: 0.25rem;
 }
-
+.page-wrapper{
+  min-height: 100%;
+}
 .page-link {
   position: relative;
   display: block;

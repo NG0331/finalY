@@ -18,14 +18,13 @@
     
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<style>
+ 
 
-</style>
+</head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md bg-dark navbar-dark shadow-sm">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="{{url('/')}}">
                     <img src="{{ asset('images/icon.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">
                     BookShop
@@ -121,4 +120,17 @@
         </main>
     </div>
 </body>
+<footer class="footer">
+      <div class="footer-content">
+      <div class="footer-section about"></div>
+      <div class="footer-section links"></div>
+      <div class="footer-section contact-form"></div>
+      
+      </div>
+
+      <div class="footer-bottom">
+            &copy;codingpoets.com | Designed by Awa Melvine
+      </div>
+
+</footer>   
 </html>
