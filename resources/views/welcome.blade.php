@@ -84,7 +84,7 @@ body {
             @endif
 </div>
 <div >
-        <a href="{{ route('showCategory') }}" class="button">Continue</a>
+        <a href="{{ route('userProduct') }}" class="button">Continue</a>
     </div>
 
 
