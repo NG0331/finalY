@@ -89,7 +89,16 @@
                                     <a class="dropdown-item" href="{{ url('/insertCategory') }}">
                                        {{ __('Insert Category') }}</a>   
 
-                                   
+                                       <div class="dropdown-divider"> </div>
+                                    <div class="dropdown-header" >Show Book</div>
+                                    <a class="dropdown-item" href="{{url('/showProduct')}}">
+                                      Show Book </a>   
+        
+                                    <a class="dropdown-item" href="{{url('/showLanguage')}}">
+                                      Show Language </a>   
+                                  
+                                    <a class="dropdown-item" href="{{url('/showCategory')}}">
+                                      Show Category </a> 
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
