@@ -28,11 +28,6 @@
     justify-content: center;
 }
 </style>
-<script> 
- 
-
- 
-</script>
 @extends('layouts.app')
 @section('content')  
 	<div class="row" align="center">
@@ -46,11 +41,6 @@
                     <div style="height: 100px">Quantity <input type="number" name="quantity" id="qty" value="1" min="1" max="10"> Available stock: {{$product->quantity}}
                     </div>
                     <div style="height: 100px">Size</div>
-                    <div class="size-content">
-                    <button class="varable-size" title="S"data-spm-anchor-id="S"name="S">S</button>
-                    <button class="varable-size" title="M"data-spm-anchor-id="M"name="M">M</button>
-                    <button  class="varable-size" title="L"data-spm-anchor-id="L"name="L">L</button>
-                    </div>
                     <input type="hidden" name="id" id="id" value="{{$product->id}}">
                     <input type="hidden" id="name" name="name" value="{{$product->name}}">
                     <input type="hidden" id="amount" name="amount" value="">
