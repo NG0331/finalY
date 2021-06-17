@@ -1,33 +1,3 @@
-<style>
-.size-content{
-    max-height: 168px;
-    overflow: auto;
-}
-.varable-size{
-    box-sizing: border-box;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    user-select: none;
-    font-size: 12px;
-    text-align: center;
-    overflow: hidden;
-    min-width: 48px;
-    max-width: 388px;
-    height: 32px;
-    padding-right: 8px;
-    padding-left: 8px;
-    margin-top: 8px;
-    margin-right: 8px;
-    background: #fff;
-    border: 1px solid #dadada;
-    border-radius: 2px;
-}
-.cartBtn{
-    justify-content: center;
-}
-</style>
 @extends('layouts.app')
 @section('content')  
 	<div class="row" align="center">
@@ -40,16 +10,13 @@
                     <p></p>
                     <div style="height: 100px">Quantity <input type="number" name="quantity" id="qty" value="1" min="1" max="10"> Available stock: {{$product->quantity}}
                     </div>
-                    <div style="height: 100px">Size</div>
                     <input type="hidden" name="id" id="id" value="{{$product->id}}">
                     <input type="hidden" id="name" name="name" value="{{$product->name}}">
                     <input type="hidden" id="amount" name="amount" value="">
-                    <div style="height: 100px">RM {{$product->price}}</div>
-                    
-                <button type="submit" class="cartBtn" style="float:right" class="btn btn-danger btn-xs">Add To Cart</button>
+                           
+                    <div style="height: 100px">RM {{$product->price}} <button type="submit" style="float:right" class="btn btn-danger btn-xs">Add To Cart</button>
                 </form>
-             </div>
+            </div>
         @endforeach     
 	</div>
 @endsection  
-

@@ -21,6 +21,11 @@
  
 
 </head>
+<div class="page-wrapper">
+    
+</div>
+
+
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md bg-dark navbar-dark shadow-sm">
@@ -48,14 +53,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        <li class="nav-item">
-                            <a href="#" class="fa fa-facebook"></a>
-                         </li>
-
-                        <li class="nav-item">
-                            <a href="#" class="fa fa-instagram"></a>
-                        </li>  
-
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/home') }}">{{ __('Home') }}</a>
                         </li>
@@ -122,14 +120,18 @@
 </body>
 <footer class="footer">
       <div class="footer-content">
-      <div class="footer-section about"></div>
-      <div class="footer-section links"></div>
-      <div class="footer-section contact-form"></div>
-      
+          <h3>Green&River Book Shop</h3>
+          <p>Paragraph for Green&River Book Shop(still havent idea)</p>
+          <p>Gmail:goh09282000@gmail.com</p>
+          <ul class="socials">
+              <li>   <a href="#"><i  class="fa fa-facebook"></i></a></li>
+              <li>   <a href="#"><i  class="fa fa-twitter"></i></a></li>
+              <li>   <a href="#"><i  class="fa fa-google-plus"></i></a></li>
+              <li>   <a href="#"><i  class="fa fa-youtube"></i></a></li>
       </div>
 
       <div class="footer-bottom">
-            &copy;codingpoets.com | Designed by Awa Melvine
+            &copy;Green&RiverBookShop | Designed by ShuLing and Zi Jiang
       </div>
 
 </footer>   
