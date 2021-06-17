@@ -65,8 +65,10 @@ body {
 </video>
 
 <div class="content">
-  <h1>Green & river Book Shop</h1>
-  <p>Great achievements and hard work are in direct proportion. There is a point of gain for every part of the work. With the accumulation of time, miracles can be created from little to more.</p>
+  <h1>Green & River Book Shop</h1>
+  <p>Great achievements and hard work are in direct proportion. 
+  There is a point of gain for every part of the work. </p>
+  <p>With the accumulation of time, miracles can be created from little to more.</p>
  
   <div class="relative flex items-top justify-center  dark:bg-gray-900 ">
             @if (Route::has('login'))

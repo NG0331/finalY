@@ -13,7 +13,7 @@
          </style>
         <body class="antialiased">
         <div>
-        <img src="{{ asset('images/back.png')}} " height="615px">
+        <img src="{{ asset('images/back.jpg')}} " height="615px" width="100%">
         </div>
         <br>
 
