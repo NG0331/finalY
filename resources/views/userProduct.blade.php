@@ -24,16 +24,13 @@
      
     </ol>
     <div class="carousel-inner" role="listbox">
-      <!-- Slide One - Set the background image for this slide in the line below -->
+
       <div class="carousel-item active" ><img src="{{ asset('images/promotion1.png')}} " height="50%" width="100%">
-        
-      </div>
-      <!-- Slide Two - Set the background image for this slide in the line below -->
-      <div class="carousel-item" ><img src="{{ asset('images/promotion2.png')}} " height="50%" width="100%">
-        
       </div>
      
-        
+      <div class="carousel-item" ><img src="{{ asset('images/promotion2.png')}} " height="50%" width="100%">
+      </div>
+     
       </div>
     </div>
 <br>
