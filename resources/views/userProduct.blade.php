@@ -31,14 +31,15 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
      
     </ol>
-    <div class="carousel-inner" role="listbox">
 
+    <div class="carousel-inner" role="listbox">
+    <a href="{{ route('products') }}" >
       <div class="carousel-item active" ><img src="{{ asset('images/promotion1.png')}} " height="50%" width="100%">
       </div>
      
       <div class="carousel-item" ><img src="{{ asset('images/promotion2.png')}} " height="50%" width="100%">
       </div>
-     
+     </a>
       </div>
     </div>
 <br>
