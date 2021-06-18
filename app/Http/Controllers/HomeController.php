@@ -29,7 +29,7 @@ class HomeController extends Controller
     }
     public function show()
     {
-        $products = Product::take(3)->inRandomOrder()->get();
+        $products = Product::take(6)->inRandomOrder()->get();
 
         return view('userProduct')->with('products', $products);
 

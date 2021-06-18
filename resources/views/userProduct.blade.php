@@ -13,7 +13,7 @@
 
 .row {
  display: table;
-
+ margin: 35px;
 }
 
 
@@ -42,11 +42,14 @@
       </div>
     </div>
 <br>
-
+<div><h3 style="color:drak-grey;">&nbsp;Recommend</h3></div>
+<br>
       <div class="row text-center">
         @foreach ($products as $product)
             <div class="column">
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <a href="{{ route('product.detail', ['id' => $product->id]) }}"><img src="{{ asset('images/') }}/{{$product->image}}" alt="product" width="150" height="220" ></a>
+              
                 <div>{{ $product->name }}</a>RM{{ $product->price }}</div>
             </div>
         @endforeach
