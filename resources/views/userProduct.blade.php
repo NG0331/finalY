@@ -10,8 +10,16 @@
   position: absolute;
   top: 0;
 }
+
+.row {
+ display: table;
+
+}
+
+
+
          </style>
-        <body class="antialiased">
+     
         <div>
         <img src="{{ asset('images/back.jpg')}} " height="615px" width="100%">
         </div>
@@ -35,9 +43,15 @@
     </div>
 <br>
 
+      <div class="row text-center">
+        @foreach ($products as $product)
+            <div class="column">
+                <a href="{{ route('product.detail', ['id' => $product->id]) }}"><img src="{{ asset('images/') }}/{{$product->image}}" alt="product" width="150" height="220" ></a>
+                <div>{{ $product->name }}</a>RM{{ $product->price }}</div>
+            </div>
+        @endforeach
 
-        <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        G&R Book Shop
-                    </div>
-        </body></html>
-        @endsection
+</div>
+       
+      
+        @endsection('content')
