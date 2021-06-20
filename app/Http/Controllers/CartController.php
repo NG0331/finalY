@@ -25,16 +25,7 @@ class CartController extends Controller
             'orderID'=>'',  
             'productID'=>$r->id,                 
             'userID'=>Auth::id(),
-             @if (s.    ) {
-                 # code...
-             } 
-             @if (condition) {
-                 # code...
-             }
-             @if (condition) {
-                 # code...
-             }
-             
+            
                         
         ]);
         Session::flash('success',"Product add succesful!");        
