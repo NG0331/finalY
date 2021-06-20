@@ -82,6 +82,13 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <div class="dropdown-divider"> </div>
+                                    <div class="dropdown-header" >Show Product</div>
+                                    <a class="dropdown-item" href="{{ url('/products') }}">
+                                       {{ __('Products list') }}</a>
+
+                                    <div class="dropdown-divider"> </div>
+                                    <div class="dropdown-header" >Insert Book</div>
                                     <a class="dropdown-item" href="{{ url('/insertProduct') }}">
                                        {{ __('Insert Product') }}</a>
 
@@ -101,6 +108,16 @@
                                   
                                     <a class="dropdown-item" href="{{url('/showCategory')}}">
                                       Show Category </a> 
+
+                                    <div class="dropdown-divider"> </div>
+                                    <div class="dropdown-header" >My Order</div>
+                                   
+                                    <a class="dropdown-item" href="{{url('/showmyCart')}}">
+                                    My Cart </a>   
+        
+                                    <a class="dropdown-item" href="{{url('/myorder')}}">
+                                     My Order </a>   
+
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
@@ -122,7 +139,7 @@
       <div class="footer-content">
           <h3>Green&River Book Shop</h3>
           <p>Paragraph for Green&River Book Shop(still havent idea)</p>
-          <p>Gmail:goh09282000@gmail.com</p>
+          <p>Email  :goh09282000@gmail.com & linnie0331@gmail.com</p>
           <ul class="socials">
               <li>   <a href="#"><i  class="fa fa-facebook"></i></a></li>
               <li>   <a href="#"><i  class="fa fa-twitter"></i></a></li>
