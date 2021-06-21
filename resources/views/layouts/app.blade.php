@@ -115,10 +115,8 @@
                                     <a class="dropdown-item" href="{{url('/showmyCart')}}">
                                     My Cart </a>   
         
-                                    <a class="dropdown-item" href="{{url('/myorder')}}">
+                                    <a class="dropdown-item" href="{{url('myOrder')}}">
                                      My Order </a>   
-
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>

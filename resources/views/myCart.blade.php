@@ -58,7 +58,7 @@
 							$subtotal = $cart->qty*$cart->price;
 						@endphp
 
-							<td>RM {{$subtotal}}</td>
+							<td>RM {{$cart->price}}</td>
 
 							<input type="hidden" value="{{$subtotal}}" name="price[]" id="price[]" disabled/>
 							
