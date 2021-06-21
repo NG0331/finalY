@@ -27,7 +27,7 @@
 							<td>{{$myorder->id}}</td>
 							<td><img src="{{ asset('images/') }}/{{$myorder->image}}" alt="" width="50"></td>
 							<td style="max-width:300px">
-								<h6>{{$myorder->name}}</h6>
+								<h6>{{$myorder->bookName}}</h6>
 							</td>
 
 							@php

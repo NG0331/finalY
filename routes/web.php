@@ -48,10 +48,14 @@ Route::post('/insertLanguage/store', [App\Http\Controllers\LanguageController::c
 Route::get('/showLanguage', [App\Http\Controllers\LanguageController::class, 'show'])->name('showLanguage');
 Route::get('/deleteLanguage/{id}', [App\Http\Controllers\LanguageController::class, 'delete'])->name('deleteLanguage');
 
+
+//bookProduct
+
+
 Route::get('/insertProduct', [App\Http\Controllers\ProductController::class, 'create'])->name('insertProduct');
 Route::post('/insertProduct/store', [App\Http\Controllers\ProductController::class, 'store'])->name('addProduct');
 Route::get('/showProduct', [App\Http\Controllers\ProductController::class, 'show'])->name('showProduct');
-Route::get('/insertProduct', [App\Http\Controllers\ProductController::class, 'create'])->name('insertProduct');
+
 Route::get('/editProduct/{id}', [App\Http\Controllers\ProductController::class, 'edit'])->name('editProduct');
 Route::get('/deleteProduct/{id}', [App\Http\Controllers\ProductController::class, 'delete'])->name('deleteProduct');
 Route::post('/updateproduct', [App\Http\Controllers\ProductController::class, 'update'])->name('updateproduct');
@@ -70,10 +74,11 @@ Route::get('/myCart', [App\Http\Controllers\CartController::class, 'show'])->nam
 Route::get('/showmyCart', [App\Http\Controllers\CartController::class, 'showMyCart'])->name('show.myCart');
 Route::get('/deleteCart/{id}', [App\Http\Controllers\CartController::class, 'delete'])->name('deleteCart');
 
+//order
 Route::post('/createorder', [App\Http\Controllers\OrderController::class, 'add'])->name('create.order');
-
-
 Route::get('/myorder', [App\Http\Controllers\OrderController::class, 'show'])->name('my.order');
+
+
 // route for processing payment
 Route::post('/paypal', [App\Http\Controllers\PaymentController::class, 'payWithpaypal'])->name('paypal');
 
