@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 use App\Models\Language;
 use App\Models\Product;
 use App\Models\Category;
 use Session;
-use DB;
-use Illuminate\Support\Facades\Auth;
+
+
 
 class ProductController extends Controller
 {
@@ -50,9 +51,33 @@ class ProductController extends Controller
     }
 
     public function show() {
-        $products=Product::paginate(12);
-        return view('showProduct')->with('products',$products);
-    }
+
+        $categories=Category::all();
+        if (request()->category) {
+            $products=DB::table('products')
+            ->select('products.*')
+            ->where('products.categoryID','=',request()->category)
+            ->paginate(9);
+
+
+            $categoryNames=DB::table('categories')
+            ->select('categories.*')
+            ->where('categories.id','=',request()->category)
+            ->get();
+            
+        }else {
+            $products=Product::paginate(9);
+            $categoryNames=null;
+  
+        }
+        
+        return view('products')->with([
+            'products'=>$products,
+            'categories'=>$categories,
+            'categoryName'=>$categoryNames,
+        ]);
+
+          }
 
     public function edit($id) {
         $products=Product::all()->where('id',$id);
@@ -92,6 +117,8 @@ class ProductController extends Controller
     }
 
     public function search() {
+        $categories=Category::all();
+        $categoryNames=null;
         $r=request();
         $keyword=$r->searchProduct;
         $products=DB::table('products')

@@ -60,7 +60,7 @@ Route::get('/editProduct/{id}', [App\Http\Controllers\ProductController::class, 
 Route::get('/deleteProduct/{id}', [App\Http\Controllers\ProductController::class, 'delete'])->name('deleteProduct');
 Route::post('/updateproduct', [App\Http\Controllers\ProductController::class, 'update'])->name('updateproduct');
 Route::post('/searchproduct', [App\Http\Controllers\ProductController::class, 'search'])->name('search.product');
-Route::get('/products', [App\Http\Controllers\ProductController::class, 'showProducts'])->name('products');
+Route::get('/products', [App\Http\Controllers\ProductController::class, 'show'])->name('products');
 Route::get('/product_detail/{id}', [App\Http\Controllers\ProductController::class, 'showProductDetail'])->name('product.detail');
 //productdetail.blade.php?id=11
 
