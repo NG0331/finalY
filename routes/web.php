@@ -54,10 +54,11 @@ Route::get('/deleteLanguage/{id}', [App\Http\Controllers\LanguageController::cla
 
 Route::get('/insertProduct', [App\Http\Controllers\ProductController::class, 'create'])->name('insertProduct');
 Route::post('/insertProduct/store', [App\Http\Controllers\ProductController::class, 'store'])->name('addProduct');
-Route::get('/showProduct', [App\Http\Controllers\ProductController::class, 'show'])->name('showProduct');
+Route::get('/showProduct', [App\Http\Controllers\ProductController::class, 'showProduct'])->name('showProduct');
 
 Route::get('/editProduct/{id}', [App\Http\Controllers\ProductController::class, 'edit'])->name('editProduct');
 Route::get('/deleteProduct/{id}', [App\Http\Controllers\ProductController::class, 'delete'])->name('deleteProduct');
+
 Route::post('/updateproduct', [App\Http\Controllers\ProductController::class, 'update'])->name('updateproduct');
 Route::post('/searchproduct', [App\Http\Controllers\ProductController::class, 'search'])->name('search.product');
 Route::get('/products', [App\Http\Controllers\ProductController::class, 'show'])->name('products');
@@ -80,13 +81,20 @@ Route::get('/myorder', [App\Http\Controllers\OrderController::class, 'show'])->n
 
 
 // route for processing payment
-Route::post('/paypal', [App\Http\Controllers\PaymentController::class, 'payWithpaypal'])->name('paypal');
+
 
 // route for check status of the payment
-Route::get('/status', [App\Http\Controllers\PaymentController::class, 'getPaymentStatus'])->name('status');
+
+
+// route for check status of the payment
+Route::get('/paywithpaypal', [App\Http\Controllers\PaypalController::class, 'payWithPaypal'])->name('paywithpaypal');
+Route::post('/paypal', [App\Http\Controllers\PaypalController::class, 'postPaymentWithpaypal'])->name('paypal');
+Route::get('/paypal', [App\Http\Controllers\PaypalController::class, 'getPaymentStatus'])->name('status');
 
 Route::get('/pdfReport', [App\Http\Controllers\PDFController::class, 'pdfReport'])->name('pdfReport');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');

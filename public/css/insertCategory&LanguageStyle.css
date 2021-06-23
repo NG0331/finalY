@@ -23,7 +23,8 @@ form {
 }
 
 label {
-    color: rgb(72, 77, 90);
+    font-size: 40px;
+    color: rgb(69, 80, 107);
     font-family: 'Catamaran', sans-serif;
 }
 

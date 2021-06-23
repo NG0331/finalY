@@ -34,6 +34,10 @@ class HomeController extends Controller
         return view('userProduct')->with('products', $products);
 
     }
+    public function adminHome()
+    {
+        return view('adminHome');
+    }
 
 
 }

@@ -77,7 +77,12 @@ class ProductController extends Controller
             'categoryName'=>$categoryNames,
         ]);
 
-          }
+        }
+
+        public function showProduct() {
+            $products=Product::paginate(12);
+            return view('showProduct')->with('products',$products);
+        }
 
     public function edit($id) {
         $products=Product::all()->where('id',$id);

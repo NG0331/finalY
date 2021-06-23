@@ -22,7 +22,7 @@ use PayPal\Api\ExecutePayment;
 use PayPal\Api\PaymentExecution;
 use PayPal\Api\Transaction;
 
-class PaymentController extends Controller
+class PaypalController extends Controller
 {
     private $_api_context;
     
