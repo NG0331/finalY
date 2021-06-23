@@ -1,19 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-@if(Session::has('success'))
-<div class="alert alert-success" role="alert">
-    {{Session::get('success')}}
-
-</div>
-@endif
-@if(Session::has('paymentSuccess'))
-<div class="alert alert-success" role="alert">
-
-    {{Session::get('paymentSuccess')}}
-
-</div>
-@endif
 
 <body>
 <link href="css/product.css" rel="stylesheet" type="text/css" />
