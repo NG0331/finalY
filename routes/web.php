@@ -88,8 +88,7 @@ Route::get('/myorder', [App\Http\Controllers\OrderController::class, 'show'])->n
 
 // route for check status of the payment
 Route::get('/paywithpaypal', [App\Http\Controllers\PaypalController::class, 'payWithPaypal'])->name('paywithpaypal');
-Route::post('/paypal', [App\Http\Controllers\PaypalController::class, 'postPaymentWithpaypal'])->name('paypal');
-Route::get('/paypal', [App\Http\Controllers\PaypalController::class, 'getPaymentStatus'])->name('status');
+Route::post('/paypal', [App\Http\Controllers\PaymentController::class, 'payWithpaypal'])->name('paypal');
 
 Route::get('/pdfReport', [App\Http\Controllers\PDFController::class, 'pdfReport'])->name('pdfReport');
 
