@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-
+<!--abc-->
 <body>
 <link href="css/product.css" rel="stylesheet" type="text/css" />
 
