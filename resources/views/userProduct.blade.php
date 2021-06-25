@@ -20,8 +20,8 @@
 
          </style>
      
-        <div>
-        <img src="{{ asset('images/back.jpg')}} " height="615px" width="100%">
+        <div >
+        <img src="{{ asset('images/back.png')}} " height="615px" width="100%">
         </div>
         <br>
 
@@ -43,16 +43,18 @@
       </div>
     </div>
 <br>
-<div><h3 style="color:drak-grey;">&nbsp;Recommend</h3></div>
+<div ><h3 style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;Recommend</h3></div>
+
 <br>
       <div class="row text-center">
         @foreach ($products as $product)
             <div class="column">
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <a href="{{ route('product.detail', ['id' => $product->id]) }}"><img src="{{ asset('images/') }}/{{$product->image}}" alt="product" width="150" height="220" ></a>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
              
-                <div>{{ $product->name }}</a>RM{{ $product->price }}</div>
+                <div>{{ $product->name }}</a></div>
+                <br>
             </div>
         @endforeach
 

@@ -135,14 +135,16 @@
 </body>
 <footer class="footer">
       <div class="footer-content">
+      <br>
           <h3>Green&River Book Shop</h3>
           <p>Paragraph for Green&River Book Shop(still havent idea)</p>
-          <p>Email  :goh09282000@gmail.com & linnie0331@gmail.com</p>
+          <p>Email  :goh09282000@gmail.com</p>
           <ul class="socials">
               <li>   <a href="#"><i  class="fa fa-facebook"></i></a></li>
               <li>   <a href="#"><i  class="fa fa-twitter"></i></a></li>
-              <li>   <a href="#"><i  class="fa fa-google-plus"></i></a></li>
+              <li>   <a href="#"><i  class="fa fa-google-plus" ></i></a></li>
               <li>   <a href="#"><i  class="fa fa-youtube"></i></a></li>
+</ul>
       </div>
 
       <div class="footer-bottom">

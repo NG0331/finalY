@@ -2,11 +2,11 @@
 body {
 	margin: 0;
 	padding: 0;
-	color: #666;
+	color: #222a3f;
 
 	font-size: 20px;
 	line-height: 1.4em; 
-	background-color: #f7f7f7;
+	background-color: #fab124; 
 
 	background-position: top;
 }
@@ -23,7 +23,7 @@ hr{
 }
 
 table, th{
-	border-right:0.5px dotted rgb(119, 119, 119);
+	border-right:0.5px dotted rgb(226, 224, 223);
 	border-collapse: collapse;
 	height:50px;
 	width:1250px;
@@ -33,7 +33,7 @@ table, th{
 
   a{
 	font-size: 18px;
-	color: rgb(138, 131, 141);
+	color: white;
 
   }
 
@@ -47,3 +47,13 @@ table, th{
     margin-right: auto;
    
   }
+
+  .ff{
+	  color:white;
+  }
+
+  .bb{
+	  background-color: #fab124;
+  }
+
+  
