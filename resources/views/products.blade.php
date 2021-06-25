@@ -48,7 +48,7 @@
                                     <br>                          
                                      <a href="{{ route('product.detail', ['id' => $product->id]) }}"><img src="{{ asset('images/') }}/{{$product->image}}" alt="" class="img-fluid" width="250px" ></a>
                                      <br>
-                                     <div class="card-heading">RM {{$product->price}} <button style="float:right;" class="btn btn-danger btn-xs">AddToCart</button>
+                                     <div class="card-heading">RM {{$product->price}} <button type="submit" style="float:right;" class="btn btn-danger btn-xs">AddToCart</button>
                                     </div>
                             </div>
                         </div>
@@ -59,5 +59,6 @@
 </div>
 <div class="text-center">
 	{{ $products->links() }}
- </div>    
+ </div> 
+ </div>   
 @endsection
