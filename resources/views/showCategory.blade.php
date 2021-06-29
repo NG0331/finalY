@@ -1,5 +1,17 @@
 @extends('layouts.app')
 @section('content')
+@guest
+@if (Route::has('login'))
+<script>
+    window.location.href='{{ route('login') }}'
+</script>
+
+@endif
+
+@elseif (Auth::user()->is_admin == 0)
+
+@elseif (Auth::user()->is_admin == 1)
+
 <link rel="stylesheet" href="css/showC&I.css"  type="text/css">
 <body>
 
@@ -27,4 +39,5 @@
         </div>
     </div>
 </body>
+@endguest
 @endsection

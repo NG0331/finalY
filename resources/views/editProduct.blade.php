@@ -1,6 +1,19 @@
 @extends('layouts.app')
 @section('content')
 
+@guest
+@if (Route::has('login'))
+<script>
+    window.location.href='{{ route('login') }}'
+</script>
+
+@endif
+
+@elseif (Auth::user()->is_admin == 0)
+
+@elseif (Auth::user()->is_admin == 1)
+
+
 @if(Session::has('success'))           
         <div class="alert alert-success" role="alert">
             {{ Session::get('success')}}
@@ -120,6 +133,7 @@
         </form>
     </div>
 </div>
+@endguest
 @endsection
 <style>
 main {

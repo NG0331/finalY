@@ -73,7 +73,10 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    @if (Auth::user()->admin == 1)
+                                        Admin
+                                        @endif
+                                        {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -86,7 +89,8 @@
                                     <div class="dropdown-header" >Show Product</div>
                                     <a class="dropdown-item" href="{{ url('/products') }}">
                                        {{ __('Products list') }}</a>
-
+                                       
+                                    @if (Auth::user()->is_admin == 1)
                                     <div class="dropdown-divider"> </div>
                                     <div class="dropdown-header" >Insert Book</div>
                                     <a class="dropdown-item" href="{{ url('/insertProduct') }}">
@@ -97,6 +101,7 @@
 
                                     <a class="dropdown-item" href="{{ url('/insertCategory') }}">
                                        {{ __('Insert Category') }}</a>   
+                                     
 
                                        <div class="dropdown-divider"> </div>
                                     <div class="dropdown-header" >Show Book</div>
@@ -108,6 +113,8 @@
                                   
                                     <a class="dropdown-item" href="{{url('/showCategory')}}">
                                       Show Category </a> 
+
+                                    @endif
 
                                     <div class="dropdown-divider"> </div>
                                     <div class="dropdown-header" >My Order</div>
