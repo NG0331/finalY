@@ -15,4 +15,7 @@ class Product extends Model
     public function language(){
         return $this->belongsTo('App\Models\Language');
     }
+    public function review(){
+        return $this->hasMany('App\Models\Review');
+    }
 }

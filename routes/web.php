@@ -63,7 +63,6 @@ Route::post('/updateproduct', [App\Http\Controllers\ProductController::class, 'u
 Route::post('/searchproduct', [App\Http\Controllers\ProductController::class, 'search'])->name('search.product');
 Route::get('/products', [App\Http\Controllers\ProductController::class, 'show'])->name('products');
 Route::get('/product_detail/{id}', [App\Http\Controllers\ProductController::class, 'showProductDetail'])->name('product.detail');
-//productdetail.blade.php?id=11
 
 
 Route::get('/search',[App\Http\Controllers\ProductController::class, 'index'])->name('search');
@@ -79,11 +78,12 @@ Route::get('/deleteCart/{id}', [App\Http\Controllers\CartController::class, 'del
 Route::post('/createorder', [App\Http\Controllers\OrderController::class, 'add'])->name('create.order');
 Route::get('/myorder', [App\Http\Controllers\OrderController::class, 'show'])->name('my.order');
 
+//productReviews
+Route::post('/insertReview/store', [App\Http\Controllers\ReviewController::class, 'store'])->name('addReview');
+Route::get('/showReview', [App\Http\Controllers\ReviewController::class, 'show'])->name('showReview');
+Route::get('/insertReview', [App\Http\Controllers\ReviewController::class, 'create'])->name('insertReview');
+Route::get('/deleteReview/{id}', [App\Http\Controllers\ReviewController::class, 'delete'])->name('deleteReview');
 
-// route for processing payment
-
-
-// route for check status of the payment
 
 
 // route for check status of the payment
