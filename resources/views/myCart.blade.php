@@ -36,7 +36,7 @@
 				<table class="table table-hover table-striped">
 					<thead style="background-color: salmon;">
 						<tr>
-							<th>ID</th>
+							<th> </th>
 							<th>Image</th>
 							<th>Name</th>
 							<th>Quantity</th>
@@ -77,7 +77,9 @@
 							<td>&nbsp;</td>    	
 							<td>Total</td>
 							<td>RM <input type="text" name="amount" id="amount" value=""></td>
-							<td><input type="submit" name="checkout" value="Checkout" style="background-color: antiquewhite; border-radius: 10px; height: 35px; width: 80px; border: 2px solid deeppink;"></td>
+							<td>
+								<input type="submit" name="checkout" value="Checkout" style="background-color: antiquewhite; border-radius: 10px; height: 35px; width: 80px; border: 2px solid deeppink;">
+							</td>
 						</tr>
 			</form>
 

@@ -14,7 +14,18 @@
                     <input type="hidden" id="name" name="name" value="{{$product->name}}">
                     <input type="hidden" id="amount" name="amount" value="">
                            
-                    <div style="height: 100px">RM {{$product->price}} <button type="submit" style="float:right" class="btn btn-danger btn-xs">Add To Cart</button>
+
+
+                    <div style="height: 100px">RM {{$product->price}}
+                    @if ($product->quantity == 0)
+                        <button type="submit" class="btn btn-danger" style="height:40px; font-size: 15px;" disabled>sold
+                            out</button>
+                        @else
+
+                        <button type="submit" class="btn btn-secondary" style="height:40px; font-size: 15px;">Add To
+                            Cart</button>
+
+                        @endif
                 </form>
             </div>
         @endforeach     
@@ -40,13 +51,59 @@
             </div>
             <p>
                 <label for="comment" class="label">Comment</label>
-                    
+                
                 <br>
                 <textarea type="text" name="comment" id="comment"></textarea>
-            </p>
+            </p> 
+            <input type="hidden" id="productID" name="productID" value="{{$product->id}}" />
+            <input type="hidden" name="id" id="id" value="{{$product->id}}">
             <input type="submit" class="btn btn-dark mt-2" />        
         </form>
 	</div>
+
+    <div class="card my-4">
+                    <h5 class="card-header">Rating & Comments <span class="badge badge-dark"></span></h5>
+                    <div class="card-body">
+
+
+                        @php
+                        $total=0;
+                        $calpoint=0;
+                        $numComment=0;
+                        @endphp
+
+                        @foreach($review as $item)
+                       @php
+                           $calpoint= $calpoint+($item->ratingPoints);
+                        $numComment=$numComment+1;
+                       @endphp
+                        
+                        @endforeach
+
+                        
+                        
+                        @if($numComment != 0)
+                        @php
+                        $total=  number_format($calpoint/$numComment,1);
+                        @endphp
+                        
+                          Total user Ratting {{$total}} ★
+                        @endif
+                        
+
+                          @foreach($review as $reviews)
+                          <blockquote class="blockquote">
+                              <p class="mb-0">{{$reviews->comment}}</p>
+                              <footer class="blockquote-footer">by:{{$reviews->username}} | ★:{{$reviews->ratingPoints}}</footer>  
+                          </blockquote>
+                          @endforeach
+                    </div>
+                </div>
+               
+
+
+            </div> <!-- END of content -->
+           
 @endsection  
 <style>
     .rate {
