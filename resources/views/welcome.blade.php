@@ -46,7 +46,16 @@ body {
   padding: 20px;
 }
 
+.ttext{
+color: #66aede;
+font-size: 26px;
+text-decoration: underline;
+}
 
+.ttext:hover{
+  color: #e9e9e9;
+  background: #212121;
+}
 .button {
   border: 1px solid #212121;
   padding: 12px 40px;
@@ -70,22 +79,23 @@ body {
   <p class="w3-large">Great achievements and hard work are in direct proportion. 
   There is a point of gain for every part of the work. </p>
   <p class="w3-large ">With the accumulation of time, miracles can be created from little to more.</p>
- 
+
   <div class="relative flex items-top justify-center  dark:bg-gray-900 ">
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
+                        <a href="{{ url('/home') }}" class="ttext">Home</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+                        <a href="{{ route('login') }}" class="ttext">Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                            <a href="{{ route('register') }}" class="ttext">Register</a>
                         @endif
                     @endauth
                 </div>
             @endif
 </div>
+
 <div >
         <a href="{{ route('userProduct') }}" class="button">Continue</a>
     </div>
