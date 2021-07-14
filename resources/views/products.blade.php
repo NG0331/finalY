@@ -8,6 +8,7 @@
 <div id="space">
 
 
+
     <div id="sidebar">
     
         <table>
@@ -19,10 +20,10 @@
         </th>
                 @endforeach
         </table>
-
+        <hr color="white" width="100%" ></hr>
     </div> <!-- END of sidebar -->
 
-    <hr color="white" ></hr>
+  
 
     <br>
 
@@ -36,32 +37,38 @@
                     @endif
 
                     <br>
-    <div class="col-md-12">
-                <div class="card border-0">
-                                
-                    <div class="row">
+<div id="container">                
+        <div class="col-md-12">
+            <div class="card border-0">
+                                    
+                <div class="row">
                     @foreach($products as $product)              
                         <div class="col-sm-4 bb">
                             <div class="card h-100">
                                 <div class="card-body " >
-                                        <h5 class="card-title" >{{$product->bookName}}</h5>  
+                                    <h5 class="card-title" >{{$product->bookName}}</h5>  
                                         <br>                          
-                                        <a href="{{ route('product.detail', ['id' => $product->id]) }}"><img src="{{ asset('images/') }}/{{$product->image}}" alt="" class="img-fluid" width="250px" ></a>
+                                            <a href="{{ route('product.detail', ['id' => $product->id]) }}"><img src="{{ asset('images/') }}/{{$product->image}}" alt="" class="img-fluid" width="250px" ></a>
                                         <br>
-                                        <div class="card-heading " >RM {{$product->price}} <button type="submit" style="float:right; " class="btn btn-danger btn-xs ff" color="white"> <a class="ff" href="{{ route('product.detail', ['id' => $product->id]) }}" font-color="white">See More</a></button>
-                                        
-                                        </div>
+
+                                        <div class="card-heading " >RM {{$product->price}} 
+                                            <button type="submit" style="float:right; " class="btn btn-danger btn-xs ff" color="white"> 
+                                                <a class="ff" href="{{ route('product.detail', ['id' => $product->id]) }}" font-color="white">See More</a>
+                                            </button>                                               
+                                    </div>
                                 </div>
                             </div>
-                        
+                                
                         </div>
-                    <br>
-                    @endforeach     
-            
+                        <br>
+                        @endforeach     
+                </div>
+                
+            </div>         
+        </div>
+</div> 
+<!--pagination -->
+    <div class="text-center">
+        {{ $products->links('pagination::bootstrap-4')}}
     </div>
-          
-</div>   
-<div class="text-center">
-			{{ $products->links('pagination::bootstrap-4')}}
-</div>
 @endsection

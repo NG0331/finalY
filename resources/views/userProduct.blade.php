@@ -1,9 +1,8 @@
-
 @extends('layouts.app')
 @section('content')
 
-        <style>
-        .numbertext {
+<style>
+  .numbertext {
   color: #f2f2f2;
   font-size: 12px;
   padding: 8px 12px;
@@ -16,9 +15,9 @@
  margin: 35px;
 }
 
-         </style>
+</style>
      
-        <div >
+        <div>
         <img src="{{ asset('images/back.png')}} " height="615px" width="100%">
         </div>
         <br>
@@ -58,5 +57,4 @@
 
 </div>
        
-      
-        @endsection('content')
+@endsection('content')

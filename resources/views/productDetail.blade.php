@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('content')  
+@if(Session::has('success'))
+	<div class="alert alert-success background-color=blue" role="alert">
+		{{ Session::get('success')}}
+	</div>
+@endif
 	<div class="row" align-text="center">
         @foreach($products as $product)       
         <div class="col-md-6"><img src="{{ asset('images/') }}/{{$product->image}}" alt="" width="50%" class="img-fluid"> </div>
