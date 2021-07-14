@@ -1,35 +1,27 @@
-@extends('layouts.app2')
+
+@extends('layouts.app')
 @section('content')
 
-
         <style>
+        .numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
 
 .row {
  display: table;
  margin: 35px;
 }
-.ss{
-  
-}
-
 
          </style>
-     <body>
-        
-     <div >
-        <img class="ss" src="{{ asset('images/back.png')}} " height="100%" width="100%">
-        
-      </div>
+     
+        <div >
+        <img src="{{ asset('images/back.png')}} " height="615px" width="100%">
+        </div>
         <br>
-
-        <div class="hero-image">
-  <div class="hero-text">
-    <h1 style="font-size:50px">I am John Doe</h1>
-    <p>And I'm a Photographer</p>
-    <button>Hire me</button>
-  </div>
-</div>
-
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -49,7 +41,6 @@
       </div>
     </div>
 <br>
-
 <div ><h3 style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;Recommend</h3></div>
 
 <br>
@@ -67,5 +58,5 @@
 
 </div>
        
-</body>
+      
         @endsection('content')

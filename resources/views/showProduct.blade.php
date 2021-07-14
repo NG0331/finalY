@@ -23,6 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com">  
 <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&family=Catamaran:wght@500&display=swap" rel="stylesheet">
 
+
 <h1>Products</h1>
 
 <div class="container">
@@ -65,13 +66,17 @@
         
         <div class="text-center">
 			<a href="{{ route('pdfReport') }}" class="btn btn-info">Download Product List</a>
-        </div>
+                </div>
 
-        <div class="text-center">
-            {{ $products->links() }}
-        </div>
+       
 
     </div>
+    <div class="text-center">
+			{{ $products->links('pagination::bootstrap-4')}}
+    </div>
+
+
 </div>
+
 @endguest
 @endsection
