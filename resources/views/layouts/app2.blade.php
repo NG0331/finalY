@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app2.css') }}" rel="stylesheet">
  
 
 </head>
@@ -36,7 +36,7 @@
     </div>
 </body>
 
-<footer class="footer">
+<footer class="footer ">
       <div class="footer-content">
       <br>
           <h3>Green&River Book Shop</h3>
