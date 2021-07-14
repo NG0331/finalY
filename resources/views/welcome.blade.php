@@ -48,7 +48,7 @@ body {
 
 .ttext{
 color: #66aede;
-font-size: 26px;
+font-size: 22px;
 text-decoration: underline;
 }
 

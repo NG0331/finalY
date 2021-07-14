@@ -27,12 +27,12 @@
 
 
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md bg-dark navbar-dark shadow-sm">
-            <div class="container-fluid">
+    <div id="app" class="">
+        <nav class=" navbar navbar-expand-md bg-dark navbar-dark shadow-sm" >
+            <div class="container-fluid toop">
                 <a class="navbar-brand" href="{{url('/')}}">
-                    <img src="{{ asset('images/icon.png')}}" width="30" height="30" class="d-inline-block align-top" alt="">
-                    BookShop
+                    <img src="{{ asset('images/icon.png')}}" width="35" height="35" class="d-inline-block align-top" alt="">
+                    &nbsp; BookShop
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -140,6 +140,7 @@
         </main>
     </div>
 </body>
+
 <footer class="footer">
       <div class="footer-content">
       <br>
@@ -147,10 +148,10 @@
           <p>Paragraph for Green&River Book Shop(still havent idea)</p>
           <p>Email  :goh09282000@gmail.com</p>
           <ul class="socials">
-              <li>   <a href="#"><i  class="fa fa-facebook"></i></a></li>
-              <li>   <a href="#"><i  class="fa fa-twitter"></i></a></li>
-              <li>   <a href="#"><i  class="fa fa-google-plus" ></i></a></li>
-              <li>   <a href="#"><i  class="fa fa-youtube"></i></a></li>
+              <li>   <a href="https://www.facebook.com/"><i  class="fa fa-facebook"></i></a></li>
+              <li>   <a href="https://twitter.com/?lang=en"><i  class="fa fa-twitter"></i></a></li>
+              <li>   <a href="https://mail.google.com/mail/u/0/?tab=wm#inbox"><i  class="fa fa-google-plus" ></i></a></li>
+              <li>   <a href="https://www.youtube.com/watch?v=kul-g_30HuU&t=10s"><i  class="fa fa-youtube"></i></a></li>
 </ul>
       </div>
 

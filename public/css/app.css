@@ -74,6 +74,26 @@ color: aqua;
   left:0px;
   padding-top: 20px;
 }
+
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 20px;
+  margin-top: 14px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
  .fa {
   padding: 5px;
   font-size: 30px;
@@ -81,18 +101,24 @@ color: aqua;
   text-align: center;
   text-decoration: none;
   margin: 5px 2px;
-  color:#fab124;
+
 }
 .fa-search{
   display: row;
 }
-.fa-instagram {
- 
-  color: #fab124;
+.fa-twitter{
+color:#6faddf;
+}
+
+.fa-google-plus{
+color:#ffffff;
+}
+.fa-youtube{
+color:#d0211c;
 }
 .fa-facebook {
  
-  color: #fab124;
+color:#3e58ee;
 }
 :root {
   --blue: #3490dc;
@@ -152,6 +178,7 @@ section {
 }
 
 body {
+ 
   margin: 0;
   font-family: "Nunito", sans-serif;
   font-size: 0.9rem;
@@ -159,9 +186,12 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: #fab124;  
+  background: linear-gradient(to right, cyan, blue);
+  color:transparent;
  
 }
+
+
 
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
@@ -661,6 +691,7 @@ pre code {
 }
 
 
+
 .container,
 .container-fluid,
 .container-xl,
@@ -672,6 +703,7 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  
 }
 
 @media (min-width: 576px) {
@@ -4604,6 +4636,7 @@ input[type=button].btn-block {
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+  
 }
 
 .navbar .container,
@@ -4616,16 +4649,18 @@ input[type=button].btn-block {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  
 }
 
 .navbar-brand {
   display: inline-block;
   padding-top: 0.32rem;
-  padding-bottom: 0.32rem;
+  padding-bottom: 0.25rem;
   margin-right: 1rem;
   font-size: 1.125rem;
   line-height: inherit;
   white-space: nowrap;
+  
 }
 
 .navbar-brand:hover,
@@ -4644,6 +4679,7 @@ input[type=button].btn-block {
 .navbar-nav .nav-link {
   padding-right: 0;
   padding-left: 0;
+  font-size: 20px;
 }
 
 .navbar-nav .dropdown-menu {
@@ -8763,7 +8799,7 @@ button.bg-dark:focus {
 
 .pb-4,
 .py-4 {
-  padding-bottom: 1.5rem !important;
+  padding-bottom: 0.2rem !important;
 }
 
 .pl-4,

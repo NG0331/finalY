@@ -1,15 +1,7 @@
 
-@extends('layouts.app')
-@section('content')
+
 
         <style>
-        .numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
 
 .row {
  display: table;
@@ -19,9 +11,9 @@
 
 
          </style>
-     
+     <body class="numbertext">
         <div >
-        <img src="{{ asset('images/back.png')}} " height="615px" width="100%">
+        <img src="{{ asset('images/back.png')}} " height="100%" width="100%">
         </div>
         <br>
 
@@ -43,6 +35,8 @@
       </div>
     </div>
 <br>
+@extends('layouts.app2')
+@section('content')
 <div ><h3 style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;Recommend</h3></div>
 
 <br>
@@ -60,5 +54,5 @@
 
 </div>
        
-      
+</body>
         @endsection('content')
