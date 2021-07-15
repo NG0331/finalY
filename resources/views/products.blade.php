@@ -68,7 +68,7 @@
         </div>
 </div> 
 <!--pagination -->
-    <div class="text-center">
+    <div class="text-center cc" >
         {{ $products->links('pagination::bootstrap-4')}}
     </div>
 @endsection
