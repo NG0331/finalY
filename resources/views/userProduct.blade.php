@@ -15,6 +15,7 @@
  margin: 35px;
 }
 
+
 </style>
      
         <div>
@@ -46,15 +47,16 @@
       <div class="row text-center">
         @foreach ($products as $product)
             <div class="column">
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <a href="{{ route('product.detail', ['id' => $product->id]) }}"><img src="{{ asset('images/') }}/{{$product->image}}" alt="product" width="150" height="220" ></a>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
              
                 <div>{{ $product->name }}</a></div>
                 <br>
             </div>
+            
         @endforeach
 
 </div>
-       
+  
 @endsection('content')
