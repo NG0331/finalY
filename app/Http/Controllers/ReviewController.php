@@ -18,11 +18,11 @@ class ReviewController extends Controller
     public function store(){   
         $r=request(); 
 
-        $username= DB::table('users')->where('id','=', Auth::id())->value('name');
+        $userName= DB::table('users')->where('id','=', Auth::id())->value('name');
         $products=Product::find($r->ID);         
         $addReview=reviews::create([     
             'userID'=>Auth::id(),
-            'username'=>$r->userName,
+            'userName'=>$r->userName,
             'productID'=>$r->id,    
             'ratingPoints'=>$r->ratingPoints,  
             'comment'=>$r->comment,
