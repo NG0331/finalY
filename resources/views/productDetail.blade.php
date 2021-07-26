@@ -5,7 +5,7 @@
 		{{ Session::get('success')}}
 	</div>
 @endif
-	<div class="row" align-text="center">
+<div class="row" align-text="center">
         @foreach($products as $product)       
         <div class="col-md-6"><img src="{{ asset('images/') }}/{{$product->image}}" alt="" width="50%" class="img-fluid"> </div>
             <div class="col-md-6">
@@ -33,7 +33,7 @@
                         @endif
                 </form>
             </div>
-        @endforeach     
+        
         <form method="post" action="{{route('addReview')}}">
             @csrf
             <!-- Add Comment -->
@@ -64,9 +64,7 @@
             <input type="hidden" name="id" id="id" value="{{$product->id}}">
             <input type="submit" class="btn btn-dark mt-2" />        
         </form>
-	</div>
-
-    <div class="card my-4">
+        <div class="card my-4">
                     <h5 class="card-header">Rating & Comments <span class="badge badge-dark"></span></h5>
                     <div class="card-body">
 
@@ -99,15 +97,16 @@
                           @foreach($review as $reviews)
                           <blockquote class="blockquote">
                               <p class="mb-0">{{$reviews->comment}}</p>
-                              <footer class="blockquote-footer">by:{{$reviews->username}} | ★:{{$reviews->ratingPoints}}</footer>  
+                              <footer class="blockquote-footer">by:{{$reviews->userName}} | ★:{{$reviews->ratingPoints}}</footer>  
                           </blockquote>
                           @endforeach
                     </div>
                 </div>
-               
+    @endforeach    
+    </div> <!-- Rating&Comment -->
+</div>
 
-
-            </div> <!-- END of content -->
+    
            
 @endsection  
 <style>

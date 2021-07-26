@@ -5,10 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Review extends Model
+class reviews extends Model
 {
     use HasFactory;
-    protected $fillable=['userID','productID','ratingPoints','comment'];
+    protected $fillable=
+    [
+        'userID',  
+        'userName',
+        'productID',
+        'ratingPoints',
+        'comment'
+    ];
+
+    
     public function product(){
         return $this->belongsTo('App\Models\Product');
     }

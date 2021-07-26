@@ -7,7 +7,7 @@ use DB;
 use App\Models\Language;
 use App\Models\Product;
 use App\Models\Category;
-use App\Models\Review;
+use App\Models\reviews;
 use Session;
 
 class ProductController extends Controller
@@ -141,7 +141,7 @@ class ProductController extends Controller
     public function showProductDetail($id) {
         $r=request();
         $products=Product::all()->where('id',$id);
-        $review=Review::where('productID',$id)->get();
+        $review=reviews::where('productID',$id)->get();
 
         return view('productDetail')->with('products',$products)
                                     ->with('review',$review)
