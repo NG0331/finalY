@@ -36,12 +36,7 @@
         <div style="text-align:center"> 
             <form class="suboform" method="post" action="{{ route('addLanguage') }}" enctype="multipart/form-data">
             @csrf 
-                <p>
-                    <label for="ID" class="label">Language ID</label>
-                    <br>
-                    <input id="ID" type="text"  name="ID" autofocus>
-                </p>
-
+              
                 <p>
                     <label for="name" class="label">Name</label>
                     <br>

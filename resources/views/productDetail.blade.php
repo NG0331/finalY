@@ -60,9 +60,11 @@
                 <br>
                 <textarea type="text" name="comment" id="comment"></textarea>
             </p> 
-            <input type="hidden" id="productID" name="productID" value="{{$product->id}}" />
+          
+            <input type="hidden" name="productID" id="productID" value="{{$product->id}}">
             <input type="hidden" name="id" id="id" value="{{$product->id}}">
-            <input type="submit" class="btn btn-dark mt-2" />        
+            <input type="submit" class="btn btn-dark mt-2" />      
+           
         </form>
         <div class="card my-4">
                     <h5 class="card-header">Rating & Comments <span class="badge badge-dark"></span></h5>
@@ -115,13 +117,11 @@
         height: 46px;
         padding: 0 10px;
     }
-
     .rate:not(:checked)>input {
         position: absolute;
         top: -9999px;
         
     }
-
     .rate:not(:checked)>label {
         float: right;
         width: 1em;
@@ -135,13 +135,10 @@
     .rate:not(:checked)>label:before {
         content: '★ ';
     }
-
     .rate>input:checked~label {
         color: #ffc700;
     }
-
     
-
     .rate>input:checked+label:hover,
     .rate>input:checked+label:hover~label,
     .rate>input:checked~label:hover,

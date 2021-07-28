@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use DB;
 use App\Models\Product; 
 use App\Models\reviews; 
-
 Use Auth;
 Use Session;
 class ReviewController extends Controller
@@ -17,19 +16,20 @@ class ReviewController extends Controller
 
     public function store(){   
         $r=request(); 
-
-        $userName= DB::table('users')->where('id','=', Auth::id())->value('name');
+      
+        $name= DB::table('users')->where('id','=', Auth::id())->value('name');
         $products=Product::find($r->ID);         
         $addReview=reviews::create([     
             'userID'=>Auth::id(),
-            'userName'=>$r->userName,
+            'userName'=>Auth::user()->name,
             'productID'=>$r->id,    
             'ratingPoints'=>$r->ratingPoints,  
             'comment'=>$r->comment,
-        ]);
+        ]); 
         
-        Session::flash('success',"Review zsuccesful!");
+       
 
         return redirect()->route('product.detail', ['id' => $r->productID]);
     }
 }
+

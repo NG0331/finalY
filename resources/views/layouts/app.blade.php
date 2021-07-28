@@ -92,11 +92,12 @@
                                         <a class="dropdown-item" href="{{ url('/products') }}">
                                         {{ __('Products list') }}</a>
                                         
-                                        @if (Auth::user()->is_admin == 1)
+                                       
                                         <div class="dropdown-divider"> </div>
                                         <div class="dropdown-header" >Insert Book</div>
                                         <a class="dropdown-item" href="{{ url('/insertProduct') }}">
                                         {{ __('Insert Product') }}</a>
+                                        @if (Auth::user()->is_admin == 1)
 
                                         <a class="dropdown-item" href="{{ url('/insertLanguage') }}">
                                         {{ __('Insert Language') }}</a>
