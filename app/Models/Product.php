@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable=['bookName','author','publisher','publishDate','description','price','image','dimensions','quantity','pages','categoryID','languageID'];
+    protected $fillable=['bookName','approve','author','publisher','publishDate','description','price','image','dimensions','quantity','pages','categoryID','languageID'];
     public function category(){
         return $this->belongsTo('App\Models\Category');
     }
@@ -16,6 +16,6 @@ class Product extends Model
         return $this->belongsTo('App\Models\Language');
     }
     public function review(){
-        return $this->hasMany('App\Models\Review');
+        return $this->hasMany('App\Models\reviews');
     }
 }

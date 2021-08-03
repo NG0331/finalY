@@ -97,3 +97,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+//pending
+Route::get('/showPendingBook', [App\Http\Controllers\PendingController::class, 'pengdingBook'])->name('showPendingBook');
+Route::get('/approvePending/{id}', [App\Http\Controllers\PendingController::class, 'approve'])->name('approvePendingBook');
+Route::get('/rejectPending/{id}', [App\Http\Controllers\PendingController::class, 'reject'])->name('rejectPendingBook');

@@ -27,9 +27,11 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    public function show()
-    {
-        $products = Product::take(6)->inRandomOrder()->get();
+    public function show(){
+        $products=DB::table('products')
+        ->select('products.*')
+        ->where('products.approve','=','1')
+        ->take(6)->inRandomOrder()->get();
 
         return view('userProduct')->with('products', $products);
 

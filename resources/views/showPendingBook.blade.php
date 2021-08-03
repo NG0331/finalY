@@ -35,10 +35,9 @@
                     <th>Image</th>
                     <th>Name</th>
                     <th>Author</th>
-                    <th>Language ID</th>
                     <th>Category ID</th>
+                    <th>Language ID</th>
                     <th>Price</th>
-                    <th>Status</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -49,26 +48,23 @@
                     <td>{{$product->id}}</td>
                     <td><img src="{{ asset('images/') }}/{{$product->image}}" alt="" width="50"></td>
                     <td style="max-width:300px">
-                        <h6>{{$product->bookName}}</h6>
+                    
                         <p class="text-muted">{{$product->description}}</p>
                     </td>   
-                    <td>{{$product->author}}</td>
-                    <td>{{$product->categoryID}}</td>
-                    <td>{{$product->languageID}}</td>
-                    <td>{{$product->price}}</td>
-                    <td>{{$product->approve}}</td>
+                        <td>{{$product->author}}</td>
+                        <td>{{$product->categoryID}}</td>
+                        <td>{{$product->languageID}}</td>
+                        <td>{{$product->price}}</td>
                     <td>
-                        <a href="{{route('editProduct',['id' => $product->id])}}" class="btn btn-warning">Edit</i></a> 
-                        <a href="{{route('deleteProduct',['id' => $product->id])}}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">Delete</a>   
+                        <a href="{{route('approvePendingBook',['id' => $product->id])}}" class="btn btn-warning">Approve</i></a> 
+                        <a href="{{route('rejectPendingBook',['id' => $product->id])}}" class="btn btn-danger">Reject</a>   
                     </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
         
-        <div class="text-center">
-			<a href="{{ route('pdfReport') }}" class="btn btn-info">Download Product List</a>
-        </div>
+        
 
        
 
@@ -81,4 +77,5 @@
 </div>
 
 @endguest
-@endsection
+
+@endsection('content')

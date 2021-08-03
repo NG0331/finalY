@@ -35,8 +35,7 @@
     <div class="container">
         <div style="text-align:center"> 
             <form class="suboform" method="post" action="{{ route('addLanguage') }}" enctype="multipart/form-data">
-            @csrf 
-              
+            @csrf              
                 <p>
                     <label for="name" class="label">Name</label>
                     <br>

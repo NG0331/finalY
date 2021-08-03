@@ -183,7 +183,7 @@
                 <a href="{{ route('product.detail', ['id' => $product->id]) }}"><img src="{{ asset('images/') }}/{{$product->image}}" alt="product" width="150" height="220" ></a>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
              
-                <div>{{ $product->name }}</a></div>
+                <div>{{ $product->bookName }}</a></div>
                 <br>
             </div>
             

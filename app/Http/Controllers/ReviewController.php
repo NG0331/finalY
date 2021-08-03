@@ -27,7 +27,6 @@ class ReviewController extends Controller
             'comment'=>$r->comment,
         ]); 
         
-       
 
         return redirect()->route('product.detail', ['id' => $r->productID]);
     }

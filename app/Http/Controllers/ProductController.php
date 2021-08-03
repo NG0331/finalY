@@ -41,6 +41,7 @@ class ProductController extends Controller
             'price'=>$r->price,
             'quantity'=>$r->quantity,
             'pages'=>$r->pages,
+            'approve'=>0, //pending = 0, 1 approve ,2 reject
             'image'=>$imageName,
         ]);
     
@@ -53,9 +54,9 @@ class ProductController extends Controller
         if (request()->category) {
             $products=DB::table('products')
             ->select('products.*')
+            ->where('products.approve','=','1')
             ->where('products.categoryID','=',request()->category)
             ->paginate(9);
-
 
             $categoryNames=DB::table('categories')
             ->select('categories.*')
@@ -63,7 +64,10 @@ class ProductController extends Controller
             ->get();
             
         }else {
-            $products=Product::paginate(9);
+            $products=DB::table('products')
+            ->select('products.*')
+            ->where('products.approve','=','1')
+            ->paginate(9); 
             $categoryNames=null;
   
         }
@@ -77,7 +81,11 @@ class ProductController extends Controller
         }
 
         public function showProduct() {
-            $products=Product::paginate(12);
+            $products=DB::table('products')
+            ->select('products.*')
+            ->where('products.approve','=','1')
+            ->paginate(12);
+        
             return view('showProduct')->with('products',$products);
         }
 
@@ -114,6 +122,7 @@ class ProductController extends Controller
         $products->price=$r->price;
         $products->quantity=$r->quantity;
         $products->pages=$r->pages;
+
         $products->save();
         return redirect()->route('showProduct');
     }
@@ -133,11 +142,16 @@ class ProductController extends Controller
         return view('/products')->with('products',$products);
     }
 
+    
     public function showProducts() {
-        $products=Product::paginate(12);
+        $products=DB::table('products')
+        ->select('products.*')
+        ->where('products.approve','=','1')
+        ->paginate(9); 
+       
+        
         return view('products')->with('products',$products);
     }
-
     public function showProductDetail($id) {
         $r=request();
         $products=Product::all()->where('id',$id);
@@ -148,4 +162,7 @@ class ProductController extends Controller
                                     ->with('productID',$id)
                                     ->with('categories',Category::all());
     }
+
+   
+    
 }

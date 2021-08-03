@@ -87,7 +87,13 @@
                                                         document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
+                                        @if (Auth::user()->is_admin == 1)
                                         <div class="dropdown-divider"> </div>
+                                      
+                                        <div class="dropdown-header" >Product Pending</div>
+                                        <a class="dropdown-item" href="{{ url('/showPendingBook') }}">
+                                        {{ __('Pending Product') }}</a>
+                                        @endif
                                         <div class="dropdown-header" >Show Product</div>
                                         <a class="dropdown-item" href="{{ url('/products') }}">
                                         {{ __('Products list') }}</a>
