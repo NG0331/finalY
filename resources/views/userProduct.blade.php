@@ -118,6 +118,13 @@
                                                         document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
+                                        @if (Auth::user()->is_admin == 1)
+                                        <div class="dropdown-divider"> </div>
+                                      
+                                        <div class="dropdown-header" >Product Pending</div>
+                                        <a class="dropdown-item" href="{{ url('/showPendingBook') }}">
+                                        {{ __('Pending Product') }}</a>
+                                        @endif
                                         <div class="dropdown-divider"> </div>
                                         <div class="dropdown-header" >Show Product</div>
                                         <a class="dropdown-item" href="{{ url('/products') }}">
@@ -183,7 +190,6 @@
                 <a href="{{ route('product.detail', ['id' => $product->id]) }}"><img src="{{ asset('images/') }}/{{$product->image}}" alt="product" width="150" height="220" ></a>
                 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
              
-                <div>{{ $product->bookName }}</a></div>
                 <br>
             </div>
             

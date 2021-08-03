@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Language;
@@ -45,7 +44,7 @@ class ProductController extends Controller
             'image'=>$imageName,
         ]);
     
-        return redirect()->route('showProduct');
+        return redirect()->route('showPendingBook');
     }
 
     public function show() {
@@ -135,7 +134,7 @@ class ProductController extends Controller
         $products=DB::table('products')
         ->leftjoin('categories','categories.id','=','products.categoryID')
         ->select('categories.name as catname','categories.id as catid','products.*')
-        ->where('products.name','like','%'.$keyword.'%')
+        ->where('products.bookName','like','%'.$keyword.'%')
         ->orWhere('products.description','like','%'.$keyword.'%')
         ->paginate(3);
         
@@ -149,7 +148,6 @@ class ProductController extends Controller
         ->where('products.approve','=','1')
         ->paginate(9); 
        
-        
         return view('products')->with('products',$products);
     }
     public function showProductDetail($id) {
