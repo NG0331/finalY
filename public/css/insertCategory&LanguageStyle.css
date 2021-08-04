@@ -26,6 +26,7 @@ label {
     font-size: 40px;
     color: rgb(69, 80, 107);
     font-family: 'Catamaran', sans-serif;
+   margin-left: 93%;
 }
 
 input,textarea {
@@ -34,10 +35,12 @@ input,textarea {
     width: 450px;
     padding: 10px;
     color: #333638;
+    margin-left: 65%;
 }
 
 input {
     height: 40px;
+    
 }
 
 input#price {
@@ -76,8 +79,10 @@ select#language, input#product-image-input {
     color: white;
     background-color: rgb(78, 81, 85);
     padding: 0px;
+    margin-left: 93%;
 }
 
 #submit-button:hover {
     background-color: rgba(62, 62, 63, 0.336);
 }
+

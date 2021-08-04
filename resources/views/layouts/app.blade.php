@@ -29,10 +29,10 @@
 </div>
 
     <body>
-        <div id="app" class="sticky">
-            <nav class=" navbar navbar-expand-md bg-dark navbar-dark shadow-sm" >
+        <div id="app" class="sticky" >
+            <nav class=" navbar navbar-expand-md bg-dark navbar-dark shadow-sm navbar-default navbar-fixed-top" >
                 <div class="container-fluid toop">
-                    <a class="navbar-brand" href="{{url('/')}}">
+                    <a class="navbar-brand" href="{{url('/')}}" style="margin-top:-10px;">
                         <img src="{{ asset('images/icon.png')}}" width="35" height="35" class="d-inline-block align-top" alt="">
                         &nbsp; BookShop
                     </a>
@@ -43,7 +43,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
 
-                        <ul class="navbar-nav mr-auto">
+                        <ul class="navbar-nav mr-auto" style="margin-top:8px;">
                             <form class="form-inline active-cyan-4" action="{{ route('search.product') }}" method="post">
                                     @csrf
                                     <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
@@ -53,11 +53,11 @@
                         </ul>
                             
                         <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto">
+                        <ul class="navbar-nav ml-auto"  style="float: right;">
                             <!-- Authentication Links -->
                             
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/userProduct') }}">{{ __('Home') }}</a>
+                            <li class="nav-item ">
+                                <a class="nav-link " href="{{ url('/userProduct') }}" style="float: right;">{{ __('Home') }}</a>
                             </li>
 
                             @guest
@@ -73,8 +73,8 @@
                                     </li>
                                 @endif
                             @else
-                                <li class="nav-item dropdown">
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <li class="nav-item dropdown"  style="float: right;">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         @if (Auth::user()->admin == 1)
                                             Admin
                                             @endif
