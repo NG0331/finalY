@@ -51,14 +51,14 @@ class PendingController extends Controller
             ->where('products.approve','=','0')
             ->paginate(12); 
        
-            return view('showPendingBook')->with('products',$products);
+            return view('pending/showPendingBook')->with('products',$products);
         }
         public function approve($id){
             $products = Product::find($id);  
             $products->approve = 1; // approve =1
             $products->save();
             Session::flash('approved',"Sucessfuly Approved");
-            return redirect()->route('showPendingBook');
+            return redirect()->route('showPending.Book'); // route Name
         }
     
         public function reject($id){
@@ -68,10 +68,10 @@ class PendingController extends Controller
             $products->approve = 2; // reject = 2
            
             Session::flash('rejected',"Sucessfuly rejected");
-            return redirect()->route('showPendingBook');
+            return redirect()->route('showPending.Book');
 
             
-       
+            
     
         }
 

@@ -28,14 +28,23 @@ class CartController extends Controller
   
         ]);
         Session::flash('success',"Product add succesful!");        
-        Return redirect()->route('products');
+        Return redirect()->route('products.List');
+    }
+    public function show(){ 
+        $carts=DB::table('mycarts')
+        ->leftjoin('products', 'products.id', '=', 'mycarts.productID')
+        ->select('mycarts.quantity as qty','mycarts.id as cid','products.*')
+   
+        ->where('mycarts.orderID','=','') //'' haven't make payment
+        ->where('mycarts.userID','=',Auth::id())
+        ->paginate(12);
+        return view('myCart')->with('carts',$carts);
     }
 
     public function showMyCart(){
         $carts=DB::table('mycarts')
         ->leftjoin('products', 'products.id', '=', 'mycarts.productID')
         ->select('mycarts.quantity as qty','mycarts.id as cid','products.*')
-   
         ->where('mycarts.orderID','=','') //'' haven't make payment
         ->where('mycarts.userID','=',Auth::id())
         ->paginate(12);

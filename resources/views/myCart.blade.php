@@ -63,7 +63,7 @@
 							<input type="hidden" value="{{$subtotal}}" name="price[]" id="price[]" disabled/>
 							
 							<td>
-								<a href="{{ route('deleteCart', ['id' => $cart->cid]) }}" 
+								<a href="{{ route('delete.Cart', ['id' => $cart->cid]) }}" 
 								class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">
 									Delete
 								</a>

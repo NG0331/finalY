@@ -33,7 +33,7 @@
     </ol>
 
     <div class="carousel-inner" role="listbox">
-    <a href="{{ route('products') }}" >
+    <a href="{{ route('products.List') }}" >
       <div class="carousel-item active" ><img src="{{ asset('images/promotion1.png')}} " height="50%" width="100%">
       </div>
      
@@ -122,48 +122,49 @@
                                         <div class="dropdown-divider"> </div>
                                       
                                         <div class="dropdown-header" >Product Pending</div>
-                                        <a class="dropdown-item" href="{{ url('/showPendingBook') }}">
+                                        <a class="dropdown-item" href="{{ url('/pending/showPendingBook') }}">
                                         {{ __('Pending Product') }}</a>
                                         @endif
-                                        <div class="dropdown-divider"> </div>
                                         <div class="dropdown-header" >Show Product</div>
-                                        <a class="dropdown-item" href="{{ url('/products') }}">
+                                        <a class="dropdown-item" href=" {{ route('products.List') }}">
                                         {{ __('Products list') }}</a>
                                         
                                        
                                         <div class="dropdown-divider"> </div>
                                         <div class="dropdown-header" >Insert Book</div>
-                                        <a class="dropdown-item" href="{{ url('/insertProduct') }}">
+                                     
+                                        <a class="dropdown-item" href="{{ route('insert.Product') }}">
                                         {{ __('Insert Product') }}</a>
                                         @if (Auth::user()->is_admin == 1)
-
-                                        <a class="dropdown-item" href="{{ url('/insertLanguage') }}">
+                                                  
+                                        <a class="dropdown-item" href="  {{ route('insert.Language') }}">
                                         {{ __('Insert Language') }}</a>
-
-                                        <a class="dropdown-item" href="{{ url('/insertCategory') }}">
+                                      
+                                        <a class="dropdown-item" href="{{ route('insert.Category') }}">
                                         {{ __('Insert Category') }}</a>   
                                         
 
                                         <div class="dropdown-divider"> </div>
                                         <div class="dropdown-header" >Show Book</div>
-                                        <a class="dropdown-item" href="{{url('/showProduct')}}">
+                                       
+                                        <a class="dropdown-item" href="  {{ route('show.Product') }}">
                                         Show Book </a>   
-            
-                                        <a class="dropdown-item" href="{{url('/showLanguage')}}">
+                                        
+                                        <a class="dropdown-item" href=" {{ route('show.Language') }}">
                                         Show Language </a>   
                                     
-                                        <a class="dropdown-item" href="{{url('/showCategory')}}">
+                                        <a class="dropdown-item" href=" {{ route('show.Category') }}">
                                         Show Category </a> 
 
                                         @endif
 
                                         <div class="dropdown-divider"> </div>
                                         <div class="dropdown-header" >My Order</div>
-                                    
-                                        <a class="dropdown-item" href="{{url('/showmyCart')}}">
+                                       
+                                        <a class="dropdown-item" href=" {{ route('show.myCart') }}">
                                         My Cart </a>   
-            
-                                        <a class="dropdown-item" href="{{url('/myorder')}}">
+                                        
+                                        <a class="dropdown-item" href=" {{ route('show.myOrder') }}">
                                         My Order </a>   
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf

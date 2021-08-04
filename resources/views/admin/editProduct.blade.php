@@ -28,7 +28,7 @@
 
 <div>
     <div style="text-align:center"> 
-        <form class="form-group" method="post" action="{{ route('updateproduct') }}" enctype="multipart/form-data">
+        <form class="form-group" method="post" action="{{ route('update.Product') }}" enctype="multipart/form-data">
             @csrf 
 
             @foreach($products as $product)

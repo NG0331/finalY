@@ -17,53 +17,43 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/userProduct', function () {
+Route::get('products/userProduct', function () {
     return view('userProduct');
-});
-
-Route::get('/insertCategory', function () {
-    return view('insertCategory');
-});
-
-Route::get('/insertLanguage', function () {
-    return view('insertLanguage');
 });
 
 Route::get('/contactus', function () {
     return view('contact');
 });
 
-Route::get('/userProduct', [App\Http\Controllers\HomeController::class, 'show'])->name('userProduct');
+Route::get('products/userProduct', [App\Http\Controllers\HomeController::class, 'show'])->name('user.Product');
 
 //bookCategory
-
-
-Route::post('/insertCategory/store', [App\Http\Controllers\CategoryController::class, 'store'])->name('addCategory');
-Route::get('/showCategory', [App\Http\Controllers\CategoryController::class, 'show'])->name('showCategory');
-Route::get('/deleteCategory/{id}', [App\Http\Controllers\CategoryController::class, 'delete'])->name('deleteCategory');
+Route::get('admin/insertCategory', [App\Http\Controllers\CategoryController::class, 'insert'])->name('insert.Category');
+Route::post('admin/insertCategory/store', [App\Http\Controllers\CategoryController::class, 'store'])->name('add.Category');
+Route::get('admin/showCategory', [App\Http\Controllers\CategoryController::class, 'show'])->name('show.Category');
+Route::get('admin/deleteCategory/{id}', [App\Http\Controllers\CategoryController::class, 'delete'])->name('delete.Category');
 
 //bookLanguage
 
-Route::post('/insertLanguage/store', [App\Http\Controllers\LanguageController::class, 'store'])->name('addLanguage');
-Route::get('/showLanguage', [App\Http\Controllers\LanguageController::class, 'show'])->name('showLanguage');
-Route::get('/deleteLanguage/{id}', [App\Http\Controllers\LanguageController::class, 'delete'])->name('deleteLanguage');
+Route::get('admin/insertLanguage', [App\Http\Controllers\LanguageController::class, 'insert'])->name('insert.Language');
+Route::post('admin/insertLanguage/store', [App\Http\Controllers\LanguageController::class, 'store'])->name('add.Language');
+Route::get('admin/showLanguage', [App\Http\Controllers\LanguageController::class, 'show'])->name('show.Language');
+Route::get('/deleteLanguage/{id}', [App\Http\Controllers\LanguageController::class, 'delete'])->name('delete.Language');
 
 
 //bookProduct
+Route::get('admin/insertProroduct', [App\Http\Controllers\ProductController::class, 'insert'])->name('insert.Product');
+Route::post('admin/insertProduct/store', [App\Http\Controllers\ProductController::class, 'store'])->name('add.Product');
+Route::get('admin/showProduct', [App\Http\Controllers\ProductController::class, 'showProduct'])->name('show.Product');
 
-
-Route::get('/insertProduct', [App\Http\Controllers\ProductController::class, 'create'])->name('insertProduct');
-Route::post('/insertProduct/store', [App\Http\Controllers\ProductController::class, 'store'])->name('addProduct');
-Route::get('/showProduct', [App\Http\Controllers\ProductController::class, 'showProduct'])->name('showProduct');
-
-Route::get('/editProduct/{id}', [App\Http\Controllers\ProductController::class, 'edit'])->name('editProduct');
-Route::get('/deleteProduct/{id}', [App\Http\Controllers\ProductController::class, 'delete'])->name('deleteProduct');
-
-Route::post('/updateproduct', [App\Http\Controllers\ProductController::class, 'update'])->name('updateproduct');
+Route::get('/editProduct/{id}', [App\Http\Controllers\ProductController::class, 'edit'])->name('edit.Product');
+Route::get('/deleteProduct/{id}', [App\Http\Controllers\ProductController::class, 'delete'])->name('delete.Product');
+Route::post('/updateproduct', [App\Http\Controllers\ProductController::class, 'update'])->name('update.Product');
 Route::post('/searchproduct', [App\Http\Controllers\ProductController::class, 'search'])->name('search.product');
-Route::get('/products', [App\Http\Controllers\ProductController::class, 'show'])->name('products');
-Route::get('/product_detail/{id}', [App\Http\Controllers\ProductController::class, 'showProductDetail'])->name('product.detail');
+Route::get('products/products', [App\Http\Controllers\ProductController::class, 'show'])->name('products.List');
+Route::get('products/product_detail/{id}', [App\Http\Controllers\ProductController::class, 'showProductDetail'])->name('product.detail');
 
+//search function
 
 Route::get('/search',[App\Http\Controllers\ProductController::class, 'index'])->name('search');
 Route::get('/autocomplete',[App\Http\Controllers\ProductController::class, 'autocomplete'])->name('autocomplete');
@@ -72,17 +62,17 @@ Route::get('/autocomplete',[App\Http\Controllers\ProductController::class, 'auto
 Route::post('/addToCart', [App\Http\Controllers\CartController::class, 'add'])->name('add.to.cart'); // when user click on add to cart in product detail, id and quantity add to cart
 Route::get('/myCart', [App\Http\Controllers\CartController::class, 'show'])->name('my.cart');  //user view all items added to cart
 Route::get('/showmyCart', [App\Http\Controllers\CartController::class, 'showMyCart'])->name('show.myCart');
-Route::get('/deleteCart/{id}', [App\Http\Controllers\CartController::class, 'delete'])->name('deleteCart');
+Route::get('/deleteCart/{id}', [App\Http\Controllers\CartController::class, 'delete'])->name('delete.Cart');
 
 //order
 Route::post('/createorder', [App\Http\Controllers\OrderController::class, 'add'])->name('create.order');
-Route::get('/myorder', [App\Http\Controllers\OrderController::class, 'show'])->name('my.order');
+Route::get('/myorder', [App\Http\Controllers\OrderController::class, 'show'])->name('show.myOrder');
 
 //productReviews
-Route::post('/insertReview/store', [App\Http\Controllers\ReviewController::class, 'store'])->name('addReview');
-Route::get('/showReview', [App\Http\Controllers\ReviewController::class, 'show'])->name('showReview');
-Route::get('/insertReview', [App\Http\Controllers\ReviewController::class, 'create'])->name('insertReview');
-Route::get('/deleteReview/{id}', [App\Http\Controllers\ReviewController::class, 'delete'])->name('deleteReview');
+Route::post('insertReview/store', [App\Http\Controllers\ReviewController::class, 'store'])->name('add.Review');
+Route::get('/showReview', [App\Http\Controllers\ReviewController::class, 'show'])->name('show.Review');
+Route::get('/insertReview', [App\Http\Controllers\ReviewController::class, 'create'])->name('inser.tReview');
+Route::get('/deleteReview/{id}', [App\Http\Controllers\ReviewController::class, 'delete'])->name('delete.Review');
 
 
 
@@ -95,9 +85,8 @@ Route::get('/pdfReport', [App\Http\Controllers\PDFController::class, 'pdfReport'
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 //pending
-Route::get('/showPendingBook', [App\Http\Controllers\PendingController::class, 'pengdingBook'])->name('showPendingBook');
-Route::get('/approvePending/{id}', [App\Http\Controllers\PendingController::class, 'approve'])->name('approvePendingBook');
-Route::get('/rejectPending/{id}', [App\Http\Controllers\PendingController::class, 'reject'])->name('rejectPendingBook');
+Route::get('pending/showPendingBook', [App\Http\Controllers\PendingController::class, 'pengdingBook'])->name('showPending.Book');
+Route::get('/approvePending/{id}', [App\Http\Controllers\PendingController::class, 'approve'])->name('approve.Book');
+Route::get('/rejectPending/{id}', [App\Http\Controllers\PendingController::class, 'reject'])->name('reject.Book');

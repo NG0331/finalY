@@ -3,8 +3,7 @@
 
 <!--abc-->
 <body>
-<link href="css/product.css" rel="stylesheet" type="text/css" />
-
+<link href="{{ asset('css/product.css') }}" rel="stylesheet" type="text/css" />
 <div id="space">
 
 
@@ -13,10 +12,11 @@
     
         <table>
         
-            <th id="th"> <a href="{{route('products')}}">All</a></th>
+            <th id="th"> <a href="{{route('products.List')}}">All</a></th><!-- the route name -->
+
 
                 @foreach($categories as $category)
-            <th >    <a href="{{route('products',['category'=>$category->id])}}" >{{$category->name}}</a>
+            <th >    <a href="{{route('products.List',['category'=>$category->id])}}" >{{$category->name}}</a> 
         </th>
                 @endforeach
         </table>

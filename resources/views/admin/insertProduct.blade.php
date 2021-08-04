@@ -25,7 +25,7 @@
             {{ Session::get('success')}}
         </div>       
 @endif 
-<link rel="stylesheet" href="css/insertProductStyle.css"/>
+<link rel="stylesheet" href="{{ asset('css/insertProductStyle.css') }}"/>
 <link rel="preconnect" href="https://fonts.gstatic.com">  
 <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&family=Catamaran:wght@500&display=swap" rel="stylesheet">
 <body>
@@ -33,7 +33,9 @@
 
     <div>
         <div style="text-align:center"> 
-            <form method="post" action="{{ route('addProduct') }}" enctype="multipart/form-data">
+          
+            <form class="suboform" method="post" action="{{ route ('add.Product') }}" enctype="multipart/form-data">
+
             @csrf 
             
                 <p>

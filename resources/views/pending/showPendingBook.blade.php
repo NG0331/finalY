@@ -19,7 +19,7 @@
         </div>       
 @endif 
 
-<link rel="stylesheet" href="css/showProductStyle.css" />
+<link rel="stylesheet" href="{{ asset('css/showProductStyle.css') }}"/>
 <link rel="preconnect" href="https://fonts.gstatic.com">  
 <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&family=Catamaran:wght@500&display=swap" rel="stylesheet">
 
@@ -56,8 +56,8 @@
                         <td>{{$product->languageID}}</td>
                         <td>{{$product->price}}</td>
                     <td>
-                        <a href="{{route('approvePendingBook',['id' => $product->id])}}" class="btn btn-warning">Approve</i></a> 
-                        <a href="{{route('rejectPendingBook',['id' => $product->id])}}" class="btn btn-danger">Reject</a>   
+                        <a href="{{route('approve.Book',['id' => $product->id])}}" class="btn btn-warning">Approve</i></a> 
+                        <a href="{{route('reject.Book',['id' => $product->id])}}" class="btn btn-danger">Reject</a>   
                     </td>
                 </tr>
                 @endforeach

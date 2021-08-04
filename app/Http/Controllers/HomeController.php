@@ -33,7 +33,7 @@ class HomeController extends Controller
         ->where('products.approve','=','1')
         ->take(6)->inRandomOrder()->get();
 
-        return view('userProduct')->with('products', $products);
+        return view('/products/userProduct')->with('products', $products);
 
     }
     public function adminHome()

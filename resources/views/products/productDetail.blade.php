@@ -34,7 +34,7 @@
                 </form>
             </div>
         
-        <form method="post" action="{{route('addReview')}}">
+        <form method="post" action="{{route('add.Review')}}">
             @csrf
             <!-- Add Comment -->
             <div class="card my-5">

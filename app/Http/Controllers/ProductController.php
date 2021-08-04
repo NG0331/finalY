@@ -14,10 +14,11 @@ class ProductController extends Controller
 
     public function __construct() {
         $this->middleware('auth');
+        
     }
-    
-    public function create(){
-        return view('insertProduct') 
+
+    public function insert(){
+        return view('admin/insertProduct') 
         ->with('languages',Language::all())
         ->with('categories',Category::all());;
     }
@@ -44,7 +45,7 @@ class ProductController extends Controller
             'image'=>$imageName,
         ]);
     
-        return redirect()->route('showPendingBook');
+        return redirect()->route('show.Product');
     }
 
     public function show() {
@@ -71,7 +72,7 @@ class ProductController extends Controller
   
         }
         
-        return view('products')->with([
+        return view('products/products')->with([
             'products'=>$products,
             'categories'=>$categories,
             'categoryName'=>$categoryNames,
@@ -84,13 +85,12 @@ class ProductController extends Controller
             ->select('products.*')
             ->where('products.approve','=','1')
             ->paginate(12);
-        
-            return view('showProduct')->with('products',$products);
+            return view('admin/showProduct')->with('products',$products);
         }
 
     public function edit($id) {
         $products=Product::all()->where('id',$id);
-        return view('editProduct')->with('products',$products)
+        return view('admin/editProduct')->with('products',$products)
                                 ->with('languages',Language::all())
                                 ->with('categories',Category::all());;
     }
@@ -98,7 +98,7 @@ class ProductController extends Controller
     public function delete($id) {
         $products=Product::find($id);
         $products->delete();
-        return redirect()->route('showProduct');
+        return redirect()->route('show.Product');
     }
 
     public function update() {
@@ -123,7 +123,7 @@ class ProductController extends Controller
         $products->pages=$r->pages;
 
         $products->save();
-        return redirect()->route('showProduct');
+        return redirect()->route('show.Product');
     }
 
     public function search() {
@@ -138,7 +138,7 @@ class ProductController extends Controller
         ->orWhere('products.description','like','%'.$keyword.'%')
         ->paginate(3);
         
-        return view('/products')->with('products',$products);
+        return view('/products/products')->with('products',$products);
     }
 
     
@@ -148,14 +148,14 @@ class ProductController extends Controller
         ->where('products.approve','=','1')
         ->paginate(9); 
        
-        return view('products')->with('products',$products);
+        return view('products/products')->with('products',$products);
     }
     public function showProductDetail($id) {
         $r=request();
         $products=Product::all()->where('id',$id);
         $review=reviews::where('productID',$id)->get();
 
-        return view('productDetail')->with('products',$products)
+        return view('products/productDetail')->with('products',$products)
                                     ->with('review',$review)
                                     ->with('productID',$id)
                                     ->with('categories',Category::all());

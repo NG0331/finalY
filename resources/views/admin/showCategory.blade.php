@@ -1,7 +1,5 @@
 @extends('layouts.app')
 @section('content')
-
-
 @guest
 @if (Route::has('login'))
 <script>
@@ -14,18 +12,13 @@
 
 @elseif (Auth::user()->is_admin == 1)
 
-@if(Session::has('success'))           
-        <div class="alert alert-success" role="alert">
-            {{ Session::get('success')}}
-        </div>       
-@endif 
+<link rel="stylesheet" href="{{ asset('css/showC&I.css') }}" type="text/css">
 
-<link rel="stylesheet" href="css/showC&I.css" type="text/css">
 <link rel="preconnect" href="https://fonts.gstatic.com">  
 <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&family=Catamaran:wght@500&display=swap" rel="stylesheet">
 <body>
 
-<h1>Language</h1>
+<h1>Category</h1>
     <div class="container">
         <div class="row">
             <table class="table table-hover table-striped">
@@ -37,11 +30,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($languages as $language)
+                    @foreach($categories as $category)
                         <tr>
-                            <td>{{$language->id}}</td>
-                            <td>{{$language->name}}</td>
-                            <td><a href="{{ route('deleteLanguage', ['id' => $language->id]) }}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">Delete</a></td>
+                            <td>{{$category->id}}</td>
+                            <td>{{$category->name}}</td>
+                            <td><a href="{{ route('delete.Category', ['id' => $category->id]) }}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">Delete</a></td>
                         </tr>
                     @endforeach
                 </tbody>

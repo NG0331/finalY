@@ -84,7 +84,7 @@ text-decoration: underline;
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/userProduct') }}" class="ttext">Home</a>
+                        <a href="{{ route('user.Product') }}" class="ttext">Home</a>
                     @else
                         <a href="{{ route('login') }}" class="ttext">Login</a>
 
@@ -97,7 +97,7 @@ text-decoration: underline;
 </div>
 
 <div >
-        <a href="{{ route('userProduct') }}" class="button">Continue</a>
+        <a href="{{ route('user.Product') }}" class="button">Continue</a>
     </div>
 
 
