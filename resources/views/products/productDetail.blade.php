@@ -1,10 +1,13 @@
 @extends('layouts.app')
 @section('content')  
+
 @if(Session::has('success'))
 	<div class="alert alert-success background-color=blue" role="alert">
+        
 		{{ Session::get('success')}}
 	</div>
 @endif
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css">
 <div class="row" align-text="center">
         @foreach($products as $product)       
         <div class="col-md-6"><img src="{{ asset('images/') }}/{{$product->image}}" alt="" width="50%" class="img-fluid"> </div>

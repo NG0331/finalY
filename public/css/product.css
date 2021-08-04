@@ -5,14 +5,18 @@ body {
 	color: #222a3f;
 	font-size: 20px;
 	line-height: 1.4em; 
-	background-color: #4287f5; 
+	
+	background-color: #4287f5;
 	background-position: top;
 }
 
+#space{
+	background-color: #4287f5;
+}
 
 #sidebar {
 
-	position: sticky;
+
 	top: 0;
 	font-size: 18px;
 	background-color: #4287f5;
@@ -31,6 +35,8 @@ table, th{
 	height:50px;
 	width:1250px;
 	text-align: center;
+	margin-left:4%;
+	background-color: #4287f5;
 	
   }
 
@@ -53,11 +59,34 @@ table, th{
 
   .ff{
 	  color:white;
+	  
   }
 
   .bb{
 	  background-color: #4287f5;
   }
 
+  .row{
+	 
+	  background-color: #4287f5;
+	  
+  }
+
+  .card-body{
+	background-image: linear-gradient(rgba(241, 241, 241, 0.6),rgba(156, 154, 154, 0.6)),url("/image/book1.jpg");
+	background-repeat: no-repeat;
+  background-size: auto 100%;
+	
+  }
+
+  .card-title{
+	  color:white;
+  }
   
+  .cc{
+	background-color: #4287f5;
+	margin-top: 10px;
+	
+	
+  }
   
