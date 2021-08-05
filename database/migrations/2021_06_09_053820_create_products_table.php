@@ -16,6 +16,8 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->boolean('approve')->default(NULL);
+            $table->string('userID')->nullable();
+            $table->string('userName')->nullable();
             $table->string('bookName');
             $table->string('author');
             $table->string('publisher');

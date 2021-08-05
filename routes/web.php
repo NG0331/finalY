@@ -25,7 +25,14 @@ Route::get('/contactus', function () {
     return view('contact');
 });
 
+
 Route::get('products/userProduct', [App\Http\Controllers\HomeController::class, 'show'])->name('user.Product');
+//userInsertProduct
+
+Route::get('user/insertProduct', [App\Http\Controllers\ProductController::class, 'userInsert'])->name('user.insert');
+Route::post('user/insertProduct/store', [App\Http\Controllers\ProductController::class, 'userStore'])->name('user.addProduct');
+Route::get('user/bookStatus', [App\Http\Controllers\ProductController::class, 'showStatus'])->name('show.Status');
+
 
 //bookCategory
 Route::get('admin/insertCategory', [App\Http\Controllers\CategoryController::class, 'insert'])->name('insert.Category');
@@ -40,12 +47,10 @@ Route::post('admin/insertLanguage/store', [App\Http\Controllers\LanguageControll
 Route::get('admin/showLanguage', [App\Http\Controllers\LanguageController::class, 'show'])->name('show.Language');
 Route::get('/deleteLanguage/{id}', [App\Http\Controllers\LanguageController::class, 'delete'])->name('delete.Language');
 
-
 //bookProduct
-Route::get('admin/insertProroduct', [App\Http\Controllers\ProductController::class, 'insert'])->name('insert.Product');
-Route::post('admin/insertProduct/store', [App\Http\Controllers\ProductController::class, 'store'])->name('add.Product');
+Route::get('admin/insertProduct', [App\Http\Controllers\ProductController::class, 'adminInsert'])->name('insert.Product');
+Route::post('admin/insertProduct/store', [App\Http\Controllers\ProductController::class, 'adminStore'])->name('add.Product');
 Route::get('admin/showProduct', [App\Http\Controllers\ProductController::class, 'showProduct'])->name('show.Product');
-
 Route::get('/editProduct/{id}', [App\Http\Controllers\ProductController::class, 'edit'])->name('edit.Product');
 Route::get('/deleteProduct/{id}', [App\Http\Controllers\ProductController::class, 'delete'])->name('delete.Product');
 Route::post('/updateproduct', [App\Http\Controllers\ProductController::class, 'update'])->name('update.Product');

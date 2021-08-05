@@ -11,7 +11,7 @@
 
 @elseif (Auth::user()->is_admin == 0)
 
-@elseif (Auth::user()->is_admin == 1)
+
 
 @if(Session::has('success'))           
         <div class="alert alert-success" role="alert">
@@ -58,14 +58,26 @@
                         <td>{{$product->categoryID}}</td>
                         <td>{{$product->languageID}}</td>
                         <td>{{$product->price}}</td>
-                    <td>
-                        <a href="{{route('approve.Book',['id' => $product->id])}}" class="btn btn-warning">Approve</i></a> 
-                        <a href="{{route('reject.Book',['id' => $product->id])}}" class="btn btn-danger">Reject</a>   
-                    </td>
+                        @if ($product ->approve == 0)   
+                        <td>    
+                            Pending
+                        </td>
+                        @endif
+                        @if ($product ->approve == 1)   
+                        <td>    
+                            Approval
+                        </td>
+                        @endif 
+                   
                 </tr>
                 @endforeach
             </tbody>
         </table>
+        
+        
+
+       
+
     </div>
     <div class="text-center">
 			{{ $products->links('pagination::bootstrap-4')}}

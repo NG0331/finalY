@@ -16,8 +16,7 @@ class ReviewController extends Controller
 
     public function store(){   
         $r=request(); 
-      
-        $name= DB::table('users')->where('id','=', Auth::id())->value('name');
+        $name= DB::table('users')->where('id','=', Auth::id())->value('name'); 
         $products=Product::find($r->ID);         
         $addReview=reviews::create([     
             'userID'=>Auth::id(),

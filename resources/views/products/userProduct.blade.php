@@ -118,6 +118,17 @@
                                                         document.getElementById('logout-form').submit();">
                                             {{ __('Logout') }}
                                         </a>
+
+                                        @if (Auth::user()->is_admin == 0)
+                                        <div class="dropdown-divider"> </div>
+                                        <div class="dropdown-header" >Insert Your Book</div>
+                                        <a class="dropdown-item" href="{{ route('user.insert') }}">
+                                        {{ __('Insert Book') }}</a>
+                                        <a class="dropdown-item" href="{{ route('show.Status') }}">
+                                        {{ __('Book Status') }}</a>
+
+                                        @endif
+
                                         @if (Auth::user()->is_admin == 1)
                                         <div class="dropdown-divider"> </div>
                                       

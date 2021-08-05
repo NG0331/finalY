@@ -64,8 +64,9 @@ class PendingController extends Controller
         public function reject($id){
     
             $products = Product::find($id);  
+            $products->approve = 2; 
             $products->delete();
-            $products->approve = 2; // reject = 2
+            // reject = 2
            
             Session::flash('rejected',"Sucessfuly rejected");
             return redirect()->route('showPending.Book');

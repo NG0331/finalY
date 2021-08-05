@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Product; 
-use App\Models\Category;
-use App\Models\Language;
 use App\Models\myCart;
 Use Session;
 Use Auth;

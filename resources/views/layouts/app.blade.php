@@ -98,6 +98,17 @@
                                         <a class="dropdown-item" href=" {{ route('products.List') }}">
                                         {{ __('Products list') }}</a>
                                         
+
+                                        @if (Auth::user()->is_admin == 0)
+                                        <div class="dropdown-divider"> </div>
+                                      
+                                        <div class="dropdown-header" >Insert Your Book</div>
+                                        <a class="dropdown-item" href="{{ route('user.insert') }}">
+                                        {{ __('Insert Book') }}</a>
+                                        <a class="dropdown-item" href="{{ route('show.Status') }}">
+                                        {{ __('Book Status') }}</a>
+
+                                        @endif
                                        
                                         <div class="dropdown-divider"> </div>
                                         <div class="dropdown-header" >Insert Book</div>

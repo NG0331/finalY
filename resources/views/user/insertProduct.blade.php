@@ -15,23 +15,22 @@
 @endif
 
 @elseif (Auth::user()->is_admin == 0)
-@elseif (Auth::user()->is_admin == 1)
+
 @if(Session::has('success'))           
         <div class="alert alert-success" role="alert">
             {{ Session::get('success')}}
         </div>       
 @endif 
-
 <link rel="stylesheet" href="{{ asset('css/insertProductStyle.css') }}"/>
 <link rel="preconnect" href="https://fonts.gstatic.com">  
 <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&family=Catamaran:wght@500&display=swap" rel="stylesheet">
 <body>
-<h1>Insert Product</h1>
+<h1>Insert Your Book!</h1>
 
     <div>
         <div style="text-align:center"> 
           
-            <form class="suboform" method="post" action="{{ route ('add.Product') }}" enctype="multipart/form-data">
+            <form class="suboform" method="post" action="{{ route ('user.addProduct') }}" enctype="multipart/form-data">
 
             @csrf 
             
