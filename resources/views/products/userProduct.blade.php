@@ -16,9 +16,6 @@
  margin: 35px;
  background-color:black;
 }
-
-
-
 </style>
      
         <div>
@@ -140,13 +137,13 @@
                                         <a class="dropdown-item" href=" {{ route('products.List') }}">
                                         {{ __('Products list') }}</a>
                                         
-                                       
+                                        @if (Auth::user()->is_admin == 1)
                                         <div class="dropdown-divider"> </div>
                                         <div class="dropdown-header" >Insert Book</div>
                                      
                                         <a class="dropdown-item" href="{{ route('insert.Product') }}">
                                         {{ __('Insert Product') }}</a>
-                                        @if (Auth::user()->is_admin == 1)
+                                      
                                                   
                                         <a class="dropdown-item" href="  {{ route('insert.Language') }}">
                                         {{ __('Insert Language') }}</a>
@@ -178,7 +175,7 @@
                                         <a class="dropdown-item" href=" {{ route('show.myOrder') }}">
                                         My Order </a>   
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                            @csrf
+                                        @csrf
                                         </form>
                                     </div>
                                 </li>

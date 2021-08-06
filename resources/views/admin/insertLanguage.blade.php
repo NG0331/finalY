@@ -16,8 +16,6 @@
 @elseif (Auth::user()->is_admin == 0)
 
 
-
-
 @elseif (Auth::user()->is_admin == 1)
 
 

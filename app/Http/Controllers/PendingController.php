@@ -43,7 +43,6 @@ class PendingController extends Controller
             'categories'=>$categories,
             'categoryName'=>$categoryNames,
         ]);
-
         }
         public function pengdingBook() {
             $products=DB::table('products')
@@ -67,13 +66,9 @@ class PendingController extends Controller
             $products->approve = 2; 
             $products->delete();
             // reject = 2
-           
+            
             Session::flash('rejected',"Sucessfuly rejected");
             return redirect()->route('showPending.Book');
 
-            
-            
-    
         }
-
 }

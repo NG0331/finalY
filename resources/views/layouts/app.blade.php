@@ -109,21 +109,21 @@
                                         {{ __('Book Status') }}</a>
 
                                         @endif
-                                       
+                                         
+                                        @if (Auth::user()->is_admin == 1)
                                         <div class="dropdown-divider"> </div>
                                         <div class="dropdown-header" >Insert Book</div>
-                                        
+                                     
                                         <a class="dropdown-item" href="{{ route('insert.Product') }}">
                                         {{ __('Insert Product') }}</a>
-                                        @if (Auth::user()->is_admin == 1)
+                                      
                                                   
                                         <a class="dropdown-item" href="  {{ route('insert.Language') }}">
                                         {{ __('Insert Language') }}</a>
                                       
                                         <a class="dropdown-item" href="{{ route('insert.Category') }}">
-                                        {{ __('Insert Category') }}</a>   
+                                        {{ __('Insert Category') }}</a>    
                                         
-
                                         <div class="dropdown-divider"> </div>
                                         <div class="dropdown-header" >Show Book</div>
                                        

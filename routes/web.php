@@ -29,9 +29,9 @@ Route::get('/contactus', function () {
 Route::get('products/userProduct', [App\Http\Controllers\HomeController::class, 'show'])->name('user.Product');
 //userInsertProduct
 
-Route::get('user/insertProduct', [App\Http\Controllers\ProductController::class, 'userInsert'])->name('user.insert');
-Route::post('user/insertProduct/store', [App\Http\Controllers\ProductController::class, 'userStore'])->name('user.addProduct');
-Route::get('user/bookStatus', [App\Http\Controllers\ProductController::class, 'showStatus'])->name('show.Status');
+Route::get('user/insertProduct', [App\Http\Controllers\UserController::class, 'userInsert'])->name('user.insert');
+Route::post('user/insertProduct/store', [App\Http\Controllers\UserController::class, 'userStore'])->name('user.addProduct');
+Route::get('user/bookStatus', [App\Http\Controllers\UserController::class, 'showStatus'])->name('show.Status');
 
 
 //bookCategory
