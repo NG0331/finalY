@@ -35,8 +35,8 @@
                     <th>Image</th>
                     <th>Name</th>
                     <th>Author</th>
-                    <th>Language ID</th>
                     <th>Category ID</th>
+                    <th>Language ID</th>
                     <th>Price</th>
                     <th>Status</th>
                     <th>Action</th>
