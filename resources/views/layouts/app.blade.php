@@ -57,7 +57,7 @@
                             <!-- Authentication Links -->
                             
                             <li class="nav-item">
-                                <a class="nav-link"href="{{ route('login') }}">{{ __('Home') }}</a>
+                                <a class="nav-link"href="{{ route('user.Product') }}">{{ __('Home') }}</a>
                             </li>
 
                             @guest

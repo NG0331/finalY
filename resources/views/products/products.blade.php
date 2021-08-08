@@ -48,7 +48,7 @@
                         <div class="col-sm-4 bb">
                             <div class="card h-100">
                                 <div class="card-body " >
-                                    <h5 class="card-title" >{{$product->bookName}}</h5>  
+                                    <h5 class="card-title" style="font-size:22px;">{{$product->bookName}}</h5>  
                                         <br>                          
                                             <a href="{{ route('product.detail', ['id' => $product->id]) }}"><img src="{{ asset('images/') }}/{{$product->image}}" alt="" class="img-fluid" width="250px" ></a>
                                         <br>
@@ -74,4 +74,5 @@
     <div class="text-center cc" >
         {{ $products->links('pagination::bootstrap-4')}}
     </div>
+    
 @endsection

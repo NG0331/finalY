@@ -22,6 +22,7 @@
 
 <!-- fdfsadfsafa -->
 <link rel="preconnect" href="https://fonts.gstatic.com">  
+<link rel="stylesheet" href="{{ asset('css/insertProductStyle.css') }}"/>
 <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&family=Catamaran:wght@500&display=swap" rel="stylesheet">
 
 <h1>Edit Product </h1>
@@ -135,83 +136,3 @@
 </div>
 @endguest
 @endsection
-<style>
-main {
-    background-image: linear-gradient(rgba(241, 241, 241, 0.6),rgba(156, 154, 154, 0.6)),url("/image/background.PNG");
-    background-position: center;
-    background-size: cover;
-    background-color: #323842;
-}
-
-h1 {
-    margin: 20px;
-    font-family: 'Teko', sans-serif;
-    text-align: center;
-    color: rgb(78, 81, 85);
-}
-
-form {
-    width: 80%;
-    margin: auto;   
-}
-
-label {
-    color: rgb(72, 77, 90);
-    font-family: 'Catamaran', sans-serif;
-}
-
-input,textarea {
-    border: none;
-    border-radius: 5px;
-    width: 450px;
-    padding: 10px;
-    color: #333638;
-}
-
-input {
-    height: 40px;
-}
-
-input#price {
-    text-align: center;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}   
-
-textarea {
-    height: 150px;
-}
-
-input,textarea, select#category,input#product-image-input {
-    background-color: rgba(255, 255, 255, 0.548);
-}
-
-select#category, input#product-image-input {
-    width: 450px;
-    margin: auto;
-    color: #333638;
-}
-
-select#language, input#product-image-input {
-    width: 450px;
-    margin: auto;
-    color: #333638;
-}
-
-#submit-button {
-    width: 100px;
-    margin: 20px;
-    color: white;
-    background-color: rgb(78, 81, 85);
-    padding: 0px;
-}
-
-#submit-button:hover {
-    background-color: rgba(62, 62, 63, 0.336);
-}
-
-</style>
