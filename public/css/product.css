@@ -79,6 +79,10 @@ table, th{
 	
   }
 
+  .align-top{
+	  margin-top: 8px;
+  }
+
   .card-title{
 	  color:white;
   }
