@@ -27,6 +27,7 @@ footer{
    height:200px;
    /* position: absolute; */
 }
+
 .footer.footer-content{ 
   display: flex;
   align-items: center;
@@ -11071,10 +11072,6 @@ a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
-}
-
-.align-top{
-  margin-top: -5px;
 }
 
 .container {

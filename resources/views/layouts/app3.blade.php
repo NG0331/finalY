@@ -32,9 +32,9 @@
         <div id="app" class="sticky" >
             <nav class=" navbar navbar-expand-md bg-dark navbar-dark shadow-sm navbar-default navbar-fixed-top" >
                 <div class="container-fluid toop">
-                    <a class="navbar-brand" href="{{url('/')}}" style="margin-top:-10px;">
-                        <img src="{{ asset('images/icon.png')}}" width="35" height="35" class="d-inline-block align-top" alt="">
-                        &nbsp; BookShop
+                    <a class="navbar-brand" href="{{url('/')}}" style="margin-top:-15px;">
+                    <div style="margin-top:8px">  <img src="{{ asset('images/icon.png')}}" width="35" height="35" class="d-inline-block align-top" alt="">
+                        &nbsp; BookShop</div>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
