@@ -21,7 +21,7 @@
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app4.css') }}" rel="stylesheet">
 
 </head>
 <div class="page-wrapper">
@@ -32,8 +32,8 @@
         <div id="app" class="sticky" >
             <nav class=" navbar navbar-expand-md bg-dark navbar-dark shadow-sm navbar-default navbar-fixed-top" >
                 <div class="container-fluid toop">
-                    <a class="navbar-brand" href="{{url('/')}}" style="margin-top:-3px;">
-                       <div style="margin-top:8px"> <img src="{{ asset('images/icon.png')}}" width="35" height="35" class="d-inline-block align-top" alt="">
+                    <a class="navbar-brand" href="{{url('/')}}" style="margin-top:-15px;">
+                       <div> <img src="{{ asset('images/icon.png')}}" width="35" height="35" class="d-inline-block align-center" alt="">
                         &nbsp; BookShop</div>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -46,7 +46,7 @@
                         <ul class="navbar-nav mr-auto" style="margin-top:8px;">
                             <form class="form-inline active-cyan-4" action="{{ route('search.product') }}" method="post">
                                     @csrf
-                                    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Find Book"
+                                    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
                                         aria-label="Search" name="searchProduct" id="searchProduct">
                             </form>
                         

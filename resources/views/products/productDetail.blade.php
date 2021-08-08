@@ -118,7 +118,7 @@
       <div class="footer-content">
       <br>
           <h3>Green&River Book Shop</h3>
-          <p>Paragraph for Green&River Book Shop(still havent idea)</p>
+          <p>Every book is a soul printed in black words on white paper, as long as my eyes, my knowledge touch it, it comes alive.</p>
           <p>Email  :goh09282000@gmail.com</p>
           <ul class="socials">
               <li>   <a href="https://www.facebook.com/"><i  class="fa fa-facebook"></i></a></li>
