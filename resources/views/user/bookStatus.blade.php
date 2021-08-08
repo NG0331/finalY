@@ -67,7 +67,8 @@
                         <td>    
                             Approval
                         </td>
-                        @endif  @if ($product ->approve == 2)   
+                        @endif  
+                        @if ($product ->approve == 2)   
                         <td>    
                            Reject
                         </td>

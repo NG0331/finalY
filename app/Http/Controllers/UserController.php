@@ -18,6 +18,7 @@ class UserController extends Controller
         ->with('languages',Language::all())
         ->with('categories',Category::all());;
     }
+
     public function userStore() {
         $r=request();
         $image=$r->file('product-image');
@@ -39,12 +40,12 @@ class UserController extends Controller
             'quantity'=>$r->quantity,
             'pages'=>$r->pages,
             'approve'=>0, //pending = 0, 1 approve ,2 reject
-            'image'=>$imageName,
-            
+            'image'=>$imageName,           
         ]);
         Session::flash('success',"waiting admin approve"); 
         return redirect()->route('show.Status');
     }
+    
     public function showStatus() {
         $products=DB::table('products')
         ->select('products.*')

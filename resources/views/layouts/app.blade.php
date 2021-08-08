@@ -46,7 +46,7 @@
                         <ul class="navbar-nav mr-auto" style="margin-top:8px;">
                             <form class="form-inline active-cyan-4" action="{{ route('search.product') }}" method="post">
                                     @csrf
-                                    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+                                    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Find Book"
                                         aria-label="Search" name="searchProduct" id="searchProduct">
                             </form>
                         

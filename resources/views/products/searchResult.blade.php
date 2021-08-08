@@ -11,36 +11,7 @@
 
 
     <div id="sidebar"  style="margin-top:2%;">
-    
-        
-        
-        <table>
-        
-        <th id="th"> <a href="{{route('products.List')}}">All</a></th><!-- the route name -->
-
-
-            @foreach($categories as $category)
-        <th >    <a href="{{route('products.List',['category'=>$category->id])}}" >{{$category->name}}</a> 
-    </th>
-            @endforeach
-    </table>
-    <hr color="white" width="100%" ></hr>
-</div> <!-- END of sidebar -->
-
-
-
-<br>
-
-@if($categoryName==null)
-                <h2 class="ff">Product</h2>
-                @else
-                @foreach ($categoryName as $CName)
-
-                <h2 class="ff">{{$CName->name}}</h2>
-                @endforeach
-                @endif
-
-                <br>
+               
 <div id="container">                
         <div class="col-md-12">
             <div class="card border-0">
@@ -73,7 +44,7 @@
 </div> 
 
 <!--pagination -->
-    <div class="text-center ">
+    <div class="text-center cc" >
         {{ $products->links('pagination::bootstrap-4')}}
     </div>
     
