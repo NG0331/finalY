@@ -38,7 +38,7 @@
                 <p>
                     <label for="name" class="label">Name</label>
                     <br>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="name" required>
                 </p>
 
                 <p>

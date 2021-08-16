@@ -43,6 +43,7 @@ class ProductController extends Controller
             'quantity'=>$r->quantity,
             'pages'=>$r->pages,
             'approve'=>1, //pending = 0, 1 approve ,2 reject
+            'bookStatus'=>$r->bookStatus,
             'image'=>$imageName,           
             
         ]);
@@ -56,6 +57,7 @@ class ProductController extends Controller
             $products=DB::table('products')
             ->select('products.*')
             ->where('products.approve','=','1')
+            ->where('products.bookStatus','=','newBook')
             ->where('products.categoryID','=',request()->category)
             ->paginate(9);
 
@@ -68,6 +70,7 @@ class ProductController extends Controller
             $products=DB::table('products')
             ->select('products.*')
             ->where('products.approve','=','1')
+            ->where('products.bookStatus','=','newBook')
             ->paginate(9); 
             $categoryNames=null;
   
@@ -88,7 +91,7 @@ class ProductController extends Controller
             ->paginate(12);
             return view('admin/showProduct')->with('products',$products);
         }
-       
+        
 
     public function edit($id) {
         $products=Product::all()->where('id',$id);
@@ -123,6 +126,7 @@ class ProductController extends Controller
         $products->price=$r->price;
         $products->quantity=$r->quantity;
         $products->pages=$r->pages;
+        $products->bookStatus=$r->pages;
         $products->save();
         return redirect()->route('show.Product');
     }
@@ -150,6 +154,7 @@ class ProductController extends Controller
             $products=DB::table('products')
             ->select('products.*')
             ->where('products.approve','=','1')
+            ->where('products.bookStatus','=','newBook')
             ->where('products.categoryID','=',request()->category)
             ->paginate(9);
 
@@ -162,6 +167,7 @@ class ProductController extends Controller
             $products=DB::table('products')
             ->select('products.*')
             ->where('products.approve','=','1')
+            ->where('products.bookStatus','=','newBook')
             ->paginate(9); 
             $categoryNames=null;
   

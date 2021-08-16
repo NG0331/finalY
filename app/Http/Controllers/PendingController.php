@@ -47,7 +47,7 @@ class PendingController extends Controller
         public function pengdingBook() {
             $products=DB::table('products')
             ->select('products.*')
-            ->where('products.approve','=','0')
+            ->where('products.approve','=','0') //pending =0
             ->paginate(12); 
        
             return view('pending/showPendingBook')->with('products',$products);

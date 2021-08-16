@@ -34,8 +34,10 @@ class HomeController extends Controller
         ->take(6)->inRandomOrder()->get();
 
         return view('/products/userProduct')->with('products', $products);
-
     }
+   
+
+
     public function adminHome()
     {
         return view('adminHome');

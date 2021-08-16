@@ -43,37 +43,37 @@
             <p>
                 <label for="bookName" class="label">Name</label>
                 <br>
-                <input type="text" name="bookName" id="bookName" value="{{$product->bookName}}">
+                <input type="text" name="bookName" id="bookName" value="{{$product->bookName}}"required>
             </p>
             
             <p>
                 <label for="author" class="label">Author</label>
                 <br>
-                <input type="text" name="author" id="author" value="{{$product->author}}">
+                <input type="text" name="author" id="author" value="{{$product->author}}"required>
             </p>
 
             <p>
                 <label for="publisher" class="label">Publisher</label>
                 <br>
-                <input type="text" name="publisher" id="publisher" value="{{$product->publisher}}">
+                <input type="text" name="publisher" id="publisher" value="{{$product->publisher}}"required>
             </p>
 
             <p>
                 <label for="publishDate" class="label">publish Date</label>
                 <br>
-                <input type="date" name="publishDate" id="publishDate" value="{{$product->publishDate}}">
+                <input type="date" name="publishDate" id="publishDate" value="{{$product->publishDate}}"required>
             </p>
             
             <p>
                 <label for="description" class="label">Description</label>
                 <br>
-                <textarea type="text" name="description" id="description" value="{{$product->description}}"></textarea>
+                <textarea type="text" name="description" id="description" value="{{$product->description}}"required></textarea>
             </p>
 
             <p>
                 <label for="dimensions" class="label">Dimensions</label>
                 <br>
-                <input type="text" name="dimensions" id="dimensions" value="{{$product->dimensions}}">
+                <input type="text" name="dimensions" id="dimensions" value="{{$product->dimensions}}"required>
             </p>
 
                      
@@ -107,24 +107,34 @@
             <p>
                 <label for="price" class="label">Price</label>
                 <br>
-                <input type="number" name="price" id="price" value="{{$product->price}}">
+                <input type="number" name="price" id="price" value="{{$product->price}}"required>
             </p>
 
             <p>
                 <label for="quantity" class="label">Quantity</label>
                 <br>
-                <input type="number" name="quantity" id="quantity" value="{{$product->quantity}}">
+                <input type="number" name="quantity" id="quantity" value="{{$product->quantity}}"required>
             </p>
+
+            <p>
+                    <label for="bookStatus" class="label">Book Status </label><br>
+
+                    <input type="radio" id="bookStatus" name="bookStatus" value="newBook">
+                    <label for="newBook">New Book</label><br>
+x
+                    <input type="radio" id="bookStatus" name="bookStatus" value="secondHand">
+                    <label for="secondHand">Second Hand Book</label><br>
+                </p>    
 
             <p>
                 <label for="pages" class="label">Pages</label>
                 <br>
-                <input type="number" name="pages" id="pages" value="{{$product->pages}}">
+                <input type="number" name="pages" id="pages" value="{{$product->pages}}"required>
             </p>
                     
             <p>
                 <label for="product-image" class="label">Image</label>
-                <input type="file" class="form-control" name="product-image" id="product-image-input" value="{{$product->image}}">
+                <input type="file" class="form-control" name="product-image" id="product-image-input" value="{{$product->image}}"required>
             </p>
             @endforeach
 

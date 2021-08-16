@@ -14,8 +14,7 @@
                
 <div id="container">                
         <div class="col-md-12">
-            <div class="card border-0">
-                                    
+            <div class="card border-0">                         
                 <div class="row">
                     @foreach($products as $product)              
                         <div class="col-sm-4 bb">
@@ -43,9 +42,5 @@
         </div>
 </div> 
 
-<!--pagination -->
-    <div class="text-center cc" >
-        {{ $products->links('pagination::bootstrap-4')}}
-    </div>
-    
+     
 @endsection

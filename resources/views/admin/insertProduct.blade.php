@@ -38,43 +38,43 @@
                 <p>
                     <label for="bookName" class="label">Book Name</label>
                     <br>
-                    <input type="text" name="bookName" id="bookName">
+                    <input type="text" name="bookName" id="bookName" required>
                 </p>
 
                 <p>
                     <label for="author" class="label">Author </label>
                     <br>
-                    <input type="text" name="author" id="author">
+                    <input type="text" name="author" id="author" required>
                 </p>
                 
                 <p>
                     <label for="publisher" class="label">Publisher </label>
                     <br>
-                    <input type="text" name="publisher" id="publisher">
+                    <input type="text" name="publisher" id="publisher" required>
                 </p>
 
                 <p>
                     <label for="publishDate" class="date">Publish Date </label>
                     <br>
-                    <input type="date" name="publishDate" id="publishDate">
+                    <input type="date" name="publishDate" id="publishDate" required>
                 </p>
 
                 <p>
                     <label for="description" class="label">Description</label>
                     <br>
-                    <textarea type="text" name="description" id="description"></textarea>
+                    <textarea type="text" name="description" id="description" required></textarea>
                 </p>
 
                 <p>
                     <label for="dimensions" class="label">Dimensions </label>
                     <br>
-                    <input type="text" name="dimensions" id="dimensions">
+                    <input type="text" name="dimensions" id="dimensions" required>
                 </p>
                         
                 <p>
                     <label for="category" class="label">Category</label>
                     <br>
-                    <select name="category" id="category" class="form-control">
+                    <select name="category" id="category" class="form-control" required>
                         @foreach($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
@@ -84,7 +84,7 @@
                 <p>
                     <label for="language" class="label">Language</label>
                     <br>
-                    <select name="language" id="language" class="form-control">
+                    <select name="language" id="language" class="form-control" required>
                         @foreach($languages as $language)
                         <option value="{{ $language->id }}">{{ $language->name }}</option>
                         @endforeach
@@ -94,28 +94,36 @@
                 <p>
                     <label for="price" class="label">Price (RM)</label>
                     <br>
-                    <input type="number" name="price" id="price">
+                    <input type="number" name="price" id="price" required>
                 </p>
                 
                 <p>
                     <label for="quantity" class="label">Quantity</label>
                     <br>
-                    <input type="number" name="quantity" id="quantity">
+                    <input type="number" name="quantity" id="quantity" required>
                 </p>
 
                 <p>
                     <label for="pages" class="label">Pages</label>
                     <br>
-                    <input type="number" name="pages" id="pages">
+                    <input type="number" name="pages" id="pages"required>
                 </p>
-                        
+                <p>
+                    <label for="bookStatus" class="label">Book Status </label><br>
+
+                    <input type="radio" id="bookStatus" name="bookStatus" value="newBook">
+                    <label for="newBook">New Book</label><br>
+x
+                    <input type="radio" id="bookStatus" name="bookStatus" value="secondHand">
+                    <label for="secondHand">Second Hand Book</label><br>
+                </p>        
                 <p>
                     <label for="product-image" class="label">Image</label>
-                    <input type="file" id="product-image-input" class="form-control" name="product-image" value="">
+                    <input type="file" id="product-image-input" class="form-control" name="product-image" value="" required>
                 </p>
-                        
+                       
                 <p>
-                    <input type="submit" id="submit-button" name="insert" value="Insert">
+                    <input type="submit" id="submit-button" name="insert" value="Insert" >
                 </p>
             </form>
         </div>

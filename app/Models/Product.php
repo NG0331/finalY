@@ -23,6 +23,7 @@ class Product extends Model
         'quantity',
         'pages',
         'categoryID',
+        'bookStatus',
         'languageID'
     ];
     public function category(){

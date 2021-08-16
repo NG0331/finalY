@@ -56,7 +56,7 @@
                     <td>{{$product->categoryID}}</td>
                     <td>{{$product->languageID}}</td>
                     <td>{{$product->price}}</td>
-                    <td>{{$product->approve}}</td>
+                    <td>{{$product->bookStatus}}</td>
                     <td>
                         <a href="{{route('edit.Product',['id' => $product->id])}}" class="btn btn-warning">Edit</i></a> 
                         <a href="{{route('delete.Product',['id' => $product->id])}}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">Delete</a>   

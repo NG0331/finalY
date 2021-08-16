@@ -55,7 +55,7 @@
 							<td>{{$cart->qty}}</td>
 
 						@php
-							$subtotal = $cart->qty*$cart->price;
+							$subtotal = $cart->qty*$cart->price; 
 						@endphp
 
 							<td>RM {{$cart->price}}</td>

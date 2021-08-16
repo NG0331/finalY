@@ -36,6 +36,7 @@
                     <th>Image</th>
                     <th>Description</th>
                     <th>User Name</th>
+                    <th>Book Status</th>
                     <th>Author</th>
                     <th>Category ID</th>
                     <th>Language ID</th>
@@ -54,6 +55,7 @@
                         <p class="text-muted">{{$product->description}}</p>
                     </td>   
                         <td>{{$product->userName}}</td>
+                        <td>{{$product->bookStatus}}</td>
                         <td>{{$product->author}}</td>
                         <td>{{$product->categoryID}}</td>
                         <td>{{$product->languageID}}</td>

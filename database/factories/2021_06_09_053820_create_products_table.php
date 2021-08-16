@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->boolean('approve')->default(NULL);
             $table->string('userID')->nullable();
             $table->string('userName')->nullable();
+            $table->string('bookStatus');
             $table->string('bookName');
             $table->string('author');
             $table->string('publisher');
