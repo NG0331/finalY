@@ -50,14 +50,14 @@
     
     <div style="color:white;text-align: center;border-style: solid;margin-left:820px;margin-right:20px;margin-top:-23.5%;">
 <h1 style="margin-top:40px;"> About us |</h1>
-<h6 style="margin-left:100px;margin-right:100px;margin-top:40px;">We unfortunately encountered the outbreak of the epidemic in 2021.<br> Our country also entered mco, and most of the people did not go out.<br> Not to mention going to the bookstore to buy books. 
+<h6 style="margin-left:100px;margin-right:100px;margin-top:40px;font-size:16px">We unfortunately encountered the outbreak of the epidemic in 2021.<br> Our country also entered mco, and most of the people did not go out.<br> Not to mention going to the bookstore to buy books. 
 </h6>
 
-<h6  style="margin-left:120px;margin-right:120px;margin-top:20px;margin-bottom:40px;">We intend to use E-commerce to conduct transactions. <br>Customers can use our website to buy our books. <br>At the same time, you can also sell the books you have read at an appropriate price through our website.<br> We intend to use this platform to let everyone know that the used books will drop in price,<br> but the knowledge in it will never be.
+<h6  style="margin-left:120px;margin-right:120px;margin-top:20px;margin-bottom:40px;font-size:16px">We intend to use E-commerce to conduct transactions. <br>Customers can use our website to buy our books. <br>At the same time, you can also sell the books you have read at an appropriate price through our website.<br> We intend to use this platform to let everyone know that the used books will drop in price,<br> but the knowledge in it will never be.
 </h6>
     </div>
         <div >
-  <ul style="position:fixed; margin-top:-1473px;width:103%;margin-left:-45px;">
+  <ul style="position:fixed; margin-top:-1533px;width:103%;margin-left:-45px;">
   <nav class=" navbar navbar-expand-md bg-dark navbar-dark shadow-sm" >
                 <div class="container-fluid toop">
                     <a class="navbar-brand" href="{{url('/')}}">

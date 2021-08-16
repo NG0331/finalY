@@ -116,14 +116,14 @@
                 <input type="number" name="quantity" id="quantity" value="{{$product->quantity}}"required>
             </p>
 
-            <p>
+          
                     <label for="bookStatus" class="label">Book Status </label><br>
+                    <p class="tabl">
+                    <input class="in1" type="radio" id="bookStatus" name="bookStatus" value="newBook">
+                    <label for="newBook" class="inla1">New Book</label><br>
 
-                    <input type="radio" id="bookStatus" name="bookStatus" value="newBook">
-                    <label for="newBook">New Book</label><br>
-x
-                    <input type="radio" id="bookStatus" name="bookStatus" value="secondHand">
-                    <label for="secondHand">Second Hand Book</label><br>
+                    <input class="in2" type="radio" id="bookStatus" name="bookStatus" value="secondHand">
+                    <label for="secondHand" class="inla2">Second Hand Book</label><br>
                 </p>    
 
             <p>

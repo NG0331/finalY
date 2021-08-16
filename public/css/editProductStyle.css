@@ -4,6 +4,34 @@ main {
     background-size: cover;
     background-color: #323842;
 }
+.in1{
+    margin-left: -84%;
+     height: 2em;
+     margin-top: 3%;
+ }
+ .in2{
+     margin-left: -66%;
+ height:2em;
+ }
+ 
+ .inla1{
+     margin-left: -35%;
+     
+     font-size:24px;
+ }
+ 
+ .inla2{
+     margin-left: -35%;
+     font-size:24px;
+ }
+ 
+ .tabl{
+     background-color: white;
+     opacity: 0.6;
+     width: 37%;
+     margin-left: 32%;
+ }
+ 
 
 h1 {
     margin: 20px;
