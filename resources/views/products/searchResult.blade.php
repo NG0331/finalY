@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app5')
 @section('content')
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css">
 
