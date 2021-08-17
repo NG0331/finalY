@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('UserHome');
     }
     public function show(){
         $products=DB::table('products')
@@ -35,9 +35,7 @@ class HomeController extends Controller
 
         return view('/products/userProduct')->with('products', $products);
     }
-   
-
-
+    
     public function adminHome()
     {
         return view('adminHome');

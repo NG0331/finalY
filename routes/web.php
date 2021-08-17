@@ -25,6 +25,10 @@ Route::get('/contactus', function () {
     return view('contact');
 });
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class,'index'])->name('adminhome');;
+
 
 Route::get('products/userProduct', [App\Http\Controllers\HomeController::class, 'show'])->name('user.Product');
 //userInsertProduct
@@ -56,8 +60,11 @@ Route::get('/deleteProduct/{id}', [App\Http\Controllers\ProductController::class
 Route::post('/updateproduct', [App\Http\Controllers\ProductController::class, 'update'])->name('update.Product');
 
 Route::post('/searchproduct', [App\Http\Controllers\ProductController::class, 'search'])->name('search.product');
+Route::post('/searchUser', [App\Http\Controllers\PendingController::class, 'searchUser'])->name('search.user');
+
 Route::get('products/searchResult', [App\Http\Controllers\ProductController::class, 'showResult'])->name('search.result');
 Route::get('products/products', [App\Http\Controllers\ProductController::class, 'show'])->name('products.List');
+Route::get('products/secondHand', [App\Http\Controllers\ProductController::class, 'showSecondHand'])->name('secondHand.List');
 Route::get('products/product_detail/{id}', [App\Http\Controllers\ProductController::class, 'showProductDetail'])->name('product.detail');
 
 //search function

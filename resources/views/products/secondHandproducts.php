@@ -30,7 +30,7 @@
 <br>
 
 @if($categoryName==null)
-                <h2 class="ff">Product</h2>
+                <h2 class="ff">Products</h2>
                 @else
                 @foreach ($categoryName as $CName)
 

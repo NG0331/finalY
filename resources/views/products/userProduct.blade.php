@@ -72,9 +72,9 @@
                         <!-- Left Side Of Navbar -->
 
                         <ul class="navbar-nav mr-auto">
-                            <form class="form-inline active-cyan-4" action="{{ route('search.product') }}" method="post">
+                            <form class="form-inline active-cyan-4" action="{{ route('search.user') }}" method="post">
                                     @csrf
-                                    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+                                    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="search user"
                                         aria-label="Search" name="searchProduct" id="searchProduct">
                             </form>
                         
@@ -136,6 +136,8 @@
                                         <div class="dropdown-header" >Show Product</div>
                                         <a class="dropdown-item" href=" {{ route('products.List') }}">
                                         {{ __('Products list') }}</a>
+                                        <a class="dropdown-item" href=" {{ route('secondHand.List') }}">
+                                        {{ __('Second Hand list') }}</a>
                                         
                                         @if (Auth::user()->is_admin == 1)
                                         <div class="dropdown-divider"> </div>

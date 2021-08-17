@@ -71,4 +71,15 @@ class PendingController extends Controller
             return redirect()->route('showPending.Book');
 
         }
+
+        public function search() {
+
+          
+            $r=request();
+            $keyword=$r->searchUser;
+            $products=DB::table('products')
+            ->where('products.userName','like','%'.$keyword.'%');
+            
+            return view('/products/searchUser')->with('products',$products);
+        }
 }
