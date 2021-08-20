@@ -179,40 +179,6 @@ class ProductController extends Controller
         
         return view('/products/searchResult')->with('products',$products);
     }
-
-    public function showResult() {
-
-        $categories=Category::all();
-        if (request()->category) {
-            $products=DB::table('products')
-            ->select('products.*')
-            ->where('products.approve','=','1')
-            ->where('products.bookStatus','=','newBook')
-            ->where('products.categoryID','=',request()->category)
-            ->paginate(9);
-
-            $categoryNames=DB::table('categories')
-            ->select('categories.*')
-            ->where('categories.id','=',request()->category)
-            ->get();
-            
-        }else {
-            $products=DB::table('products')
-            ->select('products.*')
-            ->where('products.approve','=','1')
-            ->where('products.bookStatus','=','newBook')
-            ->paginate(9); 
-            $categoryNames=null;
-  
-        }
-        
-        return view('products/searchResult')->with([
-            'products'=>$products,
-            
-        ]);
-
-        }
-
     
     public function showProducts() {
         $products=DB::table('products')

@@ -25,8 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('UserHome');
+        if(auth()->user()->is_admin == 0){
+            return view('userHome');
+        }elseif(auth()->user()->is_admin == 1){
+            return view('adminHome');
+        }
+       
     }
+  
     public function show(){
         $products=DB::table('products')
         ->select('products.*')
@@ -36,10 +42,6 @@ class HomeController extends Controller
         return view('/products/userProduct')->with('products', $products);
     }
     
-    public function adminHome()
-    {
-        return view('adminHome');
-    }
-
+    
 
 }

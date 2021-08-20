@@ -44,10 +44,10 @@
                         <!-- Left Side Of Navbar -->
 
                         <ul class="navbar-nav mr-auto" style="margin-top:8px;">
-                            <form class="form-inline active-cyan-4" action="{{ route('search.product') }}" method="post">
+                            <form class="form-inline active-cyan-4" action="{{ route('search.user') }}" method="post">
                                     @csrf
                                     <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search User"
-                                        aria-label="Search" name="searchProduct" id="searchProduct">
+                                        aria-label="Search" name="searchUser" id="searchUser">
                             </form>
                         
                         </ul>

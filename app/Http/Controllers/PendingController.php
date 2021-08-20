@@ -72,14 +72,15 @@ class PendingController extends Controller
 
         }
 
-        public function search() {
-
+        public function searchUser() {
           
             $r=request();
             $keyword=$r->searchUser;
             $products=DB::table('products')
+            ->leftjoin('categories','categories.id','=','products.categoryID')
+            ->select('categories.name as catname','categories.id as catid','products.*')
             ->where('products.userName','like','%'.$keyword.'%');
             
-            return view('/products/searchUser')->with('products',$products);
+            return view('pending/searchUser')->with('products',$products);
         }
 }

@@ -44,7 +44,6 @@
                     <th>Action</th>
                 </tr>
             </thead>
-
             <tbody>
                 @foreach($products as $product)
                 <tr>

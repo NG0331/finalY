@@ -25,9 +25,7 @@ Route::get('/contactus', function () {
     return view('contact');
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class,'index'])->name('adminhome');;
 
 
 Route::get('products/userProduct', [App\Http\Controllers\HomeController::class, 'show'])->name('user.Product');
@@ -58,11 +56,9 @@ Route::get('admin/showProduct', [App\Http\Controllers\ProductController::class, 
 Route::get('/editProduct/{id}', [App\Http\Controllers\ProductController::class, 'edit'])->name('edit.Product');
 Route::get('/deleteProduct/{id}', [App\Http\Controllers\ProductController::class, 'delete'])->name('delete.Product');
 Route::post('/updateproduct', [App\Http\Controllers\ProductController::class, 'update'])->name('update.Product');
-
 Route::post('/searchproduct', [App\Http\Controllers\ProductController::class, 'search'])->name('search.product');
-Route::post('/searchUser', [App\Http\Controllers\PendingController::class, 'searchUser'])->name('search.user');
 
-Route::get('products/searchResult', [App\Http\Controllers\ProductController::class, 'showResult'])->name('search.result');
+
 Route::get('products/products', [App\Http\Controllers\ProductController::class, 'show'])->name('products.List');
 Route::get('products/secondHand', [App\Http\Controllers\ProductController::class, 'showSecondHand'])->name('secondHand.List');
 Route::get('products/product_detail/{id}', [App\Http\Controllers\ProductController::class, 'showProductDetail'])->name('product.detail');
@@ -99,8 +95,10 @@ Route::get('/pdfReport', [App\Http\Controllers\PDFController::class, 'pdfReport'
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home');
+
 //pending
 Route::get('pending/showPendingBook', [App\Http\Controllers\PendingController::class, 'pengdingBook'])->name('showPending.Book');
 Route::get('/approvePending/{id}', [App\Http\Controllers\PendingController::class, 'approve'])->name('approve.Book');
 Route::get('/rejectPending/{id}', [App\Http\Controllers\PendingController::class, 'reject'])->name('reject.Book');
+Route::post('pending/searchUser', [App\Http\Controllers\PendingController::class, 'searchUser'])->name('search.user');
