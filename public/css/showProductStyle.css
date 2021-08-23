@@ -13,22 +13,30 @@ h1 {
     text-align: center;
 }
 
+.row{
+    width:180%
+}
+
 .table {
     font-family: 'Catamaran', sans-serif;
     margin-left: 5%;
-    
+   
 }
+
+
 
 .table thead th {
     border-bottom: none;
+  
 }
 
 .table td, .table th {
     border-top: none;
+    
 }
 
 #table-head {
-    background-color: rgba(0, 119, 255, 0.493);
+    background-color: rgba(0, 119, 255, 0.7);
     color: white;
 }
 

@@ -117,7 +117,7 @@
 <footer class="footer ttop">
       <div class="footer-content">
       <br>
-          <h3>Green&River Book Shop</h3>
+          <h3>Green & River Book Shop</h3>
           <p>Every book is a soul printed in black words on white paper, as long as my eyes, my knowledge touch it, it comes alive.</p>
           <p>Email  :goh09282000@gmail.com</p>
           <ul class="socials">
@@ -131,7 +131,7 @@
        
       </div>
       <div class="footer-bottom">
-            &copy;Green&RiverBookShop | Designed by ShuLing and Zi Jiang
+            &copy;Green & RiverBookShop | Designed by ShuLing and Zi Jiang
       </div>
 
 </footer>   
