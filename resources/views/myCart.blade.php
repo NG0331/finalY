@@ -29,8 +29,8 @@
 
 <body style="background-color: peachpuff;">
 
-	<div class="container">
-		<div class="row">
+	<div class="container" >
+		<div class="row" style="width:140%;margin-left:20%">
 			<form method="post" action="{{ route('create.order') }}" style="width:-webkit-fill-available;">
 				@csrf
 				<table class="table table-hover table-striped">

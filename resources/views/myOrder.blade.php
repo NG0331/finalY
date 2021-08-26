@@ -3,7 +3,7 @@
 
 <body style="background-color: lightcyan;">
 
-	<div class="container">
+	<div class="container" style="width:140%;margin-left:13%">
 		<div class="row">
 			<form method="post" action="{!! URL::to('paypal') !!}" style="width:-webkit-fill-available;">
 				@csrf
