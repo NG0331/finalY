@@ -1,4 +1,4 @@
-@extends('layouts.pendingApp')
+@extends('layouts.app')
 @section('content')
 
 @guest

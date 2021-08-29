@@ -94,12 +94,15 @@
                                         <a class="dropdown-item" href="{{ route('showPending.Book') }}">
                                         {{ __('Pending Product') }}</a>
                                         @endif
+                                        @if (Auth::user()->is_admin == 0)
                                         <div class="dropdown-header" >Show Product</div>
                                         <a class="dropdown-item" href=" {{ route('products.List') }}">
-                                        {{ __('Products List') }}</a>
+                                        {{ __('New Book List') }}</a>
 
                                         <a class="dropdown-item" href=" {{ route('secondHand.List') }}">
                                         {{ __('Second Hand List') }}</a>
+                                        
+                                        @endif
                                         
 
                                         @if (Auth::user()->is_admin == 0)
@@ -140,7 +143,7 @@
                                         Show Category </a> 
 
                                         @endif
-
+                                        @if (Auth::user()->is_admin == 0)
                                         <div class="dropdown-divider"> </div>
                                         <div class="dropdown-header" >My Order</div>
                                         <a class="dropdown-item" href=" {{ route('show.myCart') }}">
@@ -151,6 +154,9 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
                                         </form>
+                                       
+                                        @endif
+
                                     </div>
                                 </li>
                             @endguest
@@ -168,7 +174,7 @@
 <footer class="footer">
       <div class="footer-content">
       <br>
-          <h3>Green & River Book Shop</h3>
+          <h3>Green&River Book Shop</h3>
           <p>Every book is a soul printed in black words on white paper, as long as my eyes, my knowledge touch it, it comes alive.</p>
           <p>Email  :goh09282000@gmail.com</p>
           <ul class="socials">
@@ -182,7 +188,7 @@
        
       </div>
       <div class="footer-bottom">
-            &copy;Green & RiverBookShop | Designed by ShuLing and Zi Jiang
+            &copy;Green&RiverBookShop | Designed by ShuLing and Zi Jiang
       </div>
 
 </footer>   

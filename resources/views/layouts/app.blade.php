@@ -94,12 +94,15 @@
                                         <a class="dropdown-item" href="{{ route('showPending.Book') }}">
                                         {{ __('Pending Product') }}</a>
                                         @endif
+                                        @if (Auth::user()->is_admin == 0)
                                         <div class="dropdown-header" >Show Product</div>
                                         <a class="dropdown-item" href=" {{ route('products.List') }}">
-                                        {{ __('Products List') }}</a>
-                                        
+                                        {{ __('New Book List') }}</a>
+
                                         <a class="dropdown-item" href=" {{ route('secondHand.List') }}">
                                         {{ __('Second Hand List') }}</a>
+                                        
+                                        @endif
 
                                         @if (Auth::user()->is_admin == 0)
                                         <div class="dropdown-divider"> </div>
@@ -140,6 +143,8 @@
 
                                         @endif
 
+                                        @if (Auth::user()->is_admin == 0)
+
                                         <div class="dropdown-divider"> </div>
                                         <div class="dropdown-header" >My Order</div>
                                         <a class="dropdown-item" href=" {{ route('show.myCart') }}">
@@ -150,6 +155,7 @@
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
                                         </form>
+                                        @endif
                                     </div>
                                 </li>
                             @endguest

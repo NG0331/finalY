@@ -23,7 +23,6 @@ class CartController extends Controller
             'orderID'=>'',  
             'productID'=>$r->id,                 
             'userID'=>Auth::id(),
-  
         ]);
         Session::flash('success',"Product add succesful!");        
         Return redirect()->route('products.List');
@@ -32,7 +31,6 @@ class CartController extends Controller
         $carts=DB::table('mycarts')
         ->leftjoin('products', 'products.id', '=', 'mycarts.productID')
         ->select('mycarts.quantity as qty','mycarts.id as cid','products.*')
-   
         ->where('mycarts.orderID','=','') //'' haven't make payment
         ->where('mycarts.userID','=',Auth::id())
         ->paginate(12);

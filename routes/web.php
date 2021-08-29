@@ -41,7 +41,7 @@ Route::get('admin/insertCategory', [App\Http\Controllers\CategoryController::cla
 Route::post('admin/insertCategory/store', [App\Http\Controllers\CategoryController::class, 'store'])->name('add.Category');
 Route::get('admin/showCategory', [App\Http\Controllers\CategoryController::class, 'show'])->name('show.Category');
 Route::get('admin/deleteCategory/{id}', [App\Http\Controllers\CategoryController::class, 'delete'])->name('delete.Category');
-
+Route::get('admin/product_detail/{id}', [App\Http\Controllers\ProductController::class, 'adminShowProductDetail'])->name('book.detail');
 //bookLanguage
 
 Route::get('admin/insertLanguage', [App\Http\Controllers\LanguageController::class, 'insert'])->name('insert.Language');

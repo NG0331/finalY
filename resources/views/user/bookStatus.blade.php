@@ -41,7 +41,7 @@
                     <th>Language ID</th>
                     <th>Price</th>
                     <th>Action</th>
-                    <th>
+                    
                 </tr>
             </thead>
 

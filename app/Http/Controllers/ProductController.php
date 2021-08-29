@@ -199,4 +199,14 @@ class ProductController extends Controller
                                     ->with('productID',$id)
                                     ->with('categories',Category::all());
     }      
+    public function adminShowProductDetail($id) {
+        $r=request();
+        $products=Product::all()->where('id',$id);
+        $review=reviews::where('productID',$id)->get();
+
+        return view('admin/bookDetail')->with('products',$products)
+                                    ->with('review',$review)
+                                    ->with('productID',$id)
+                                    ->with('categories',Category::all());
+    }      
 }

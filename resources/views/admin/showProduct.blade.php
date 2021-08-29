@@ -34,6 +34,7 @@
                     <th>ID</th>
                     <th>Image</th>
                     <th>Name</th>
+                    <th>Sell by</th>
                     <th>Author</th>
                     <th>Category ID</th>
                     <th>Language ID</th>
@@ -51,13 +52,16 @@
                     <td style="max-width:300px">
                         <h6>{{$product->bookName}}</h6>
                         <p class="text-muted">{{$product->description}}</p>
-                    </td>   
+                    </td>
+                    <td>{{$product->userName}}</td>   
                     <td>{{$product->author}}</td>
                     <td>{{$product->categoryID}}</td>
                     <td>{{$product->languageID}}</td>
                     <td>{{$product->price}}</td>
                     <td>{{$product->bookStatus}}</td>
                     <td>
+                   
+                        <a  href="{{ route('book.detail', ['id' => $product->id]) }}" class="btn btn-success">Information</a>
                         <a href="{{route('edit.Product',['id' => $product->id])}}" class="btn btn-warning">Edit</i></a> 
                         <a href="{{route('delete.Product',['id' => $product->id])}}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">Delete</a>   
                     </td>
