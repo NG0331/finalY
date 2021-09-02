@@ -116,7 +116,7 @@
                                             {{ __('Logout') }}
                                         </a>
 
-                                        @if (Auth::user()->is_admin == 0)
+                                       
                                         <div class="dropdown-divider"> </div>
                                         <div class="dropdown-header" >Insert Your Book</div>
                                         <a class="dropdown-item" href="{{ route('user.insert') }}">
@@ -124,7 +124,7 @@
                                         <a class="dropdown-item" href="{{ route('show.Status') }}">
                                         {{ __('Book Status') }}</a>
 
-                                        @endif
+                                      
 
                                         @if (Auth::user()->is_admin == 1)
                                         <div class="dropdown-divider"> </div>
@@ -196,6 +196,9 @@
 
        
 <br>
+
+@if (Auth::user()->is_admin == 0)
+
 <div ><h3 style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;Recommend</h3></div>
 
 <br>
@@ -212,6 +215,27 @@
         @endforeach
 
 </div>
+@endif
 
+
+@if (Auth::user()->is_admin == 1)
+
+<div ><h3 style="color:white;">&nbsp;&nbsp;&nbsp;&nbsp;Recommend</h3></div>
+
+<br>
+      <div class="row text-center">
+        @foreach ($products as $product)
+            <div class="column">
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <a href="{{ route('book.detail', ['id' => $product->id]) }}"><img src="{{ asset('images/') }}/{{$product->image}}" alt="product" width="150" height="220" ></a>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+             
+                <br>
+            </div>
+            
+        @endforeach
+
+</div>
+@endif
   
 @endsection('content')

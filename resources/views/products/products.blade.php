@@ -39,6 +39,8 @@
                 @endif
 
                 <br>
+@if (Auth::user()->is_admin == 0)
+
 <div id="container">                
         <div class="col-md-12">
             <div class="card border-0">
@@ -70,9 +72,51 @@
         </div>
 </div> 
 
+
 <!--pagination -->
     <div class="text-center ">
         {{ $products->links('pagination::bootstrap-4')}}
     </div>
-    
+
+@endif
+@if (Auth::user()->is_admin == 1)
+
+<div id="container">                
+        <div class="col-md-12">
+            <div class="card border-0">
+                                    
+                <div class="row">
+                    @foreach($products as $product)              
+                        <div class="col-sm-4 bb">
+                            <div class="card h-100">
+                                <div class="card-body " >
+                                    <h5 class="card-title" style="font-size:22px;">{{$product->bookName}}</h5>  
+                                        <br>                          
+                                            <a href="{{ route('book.detail', ['id' => $product->id]) }}"><img src="{{ asset('images/') }}/{{$product->image}}" alt="" class="img-fluid" width="250px" ></a>
+                                        <br>
+
+                                        <div class="card-title " >RM {{$product->price}} 
+                                            <button type="submit" style="float:right; " class="btn btn-danger btn-xs ff" color="white"> 
+                                                <a class="ff" href="{{ route('product.detail', ['id' => $product->id]) }}" font-color="white">See More</a>
+                                            </button>                                               
+                                    </div>
+                                </div>
+                            </div>
+                                
+                        </div>
+                        <br style="background-color: #4287f5;">
+                        @endforeach     
+                </div>
+                
+            </div>         
+        </div>
+</div> 
+
+
+<!--pagination -->
+    <div class="text-center ">
+        {{ $products->links('pagination::bootstrap-4')}}
+    </div>
+
+@endif
 @endsection

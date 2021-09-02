@@ -1,12 +1,24 @@
 @extends('layouts.app3')
 @section('content')  
+@guest
+@if (Route::has('login'))
 
+<script>
+    window.location.href='{{ route('login') }}'
+</script>
+
+@endif
+
+@elseif (Auth::user()->is_admin == 0)
+
+@elseif (Auth::user()->is_admin == 1)
 @if(Session::has('success'))
 	<div class="alert alert-success background-color=blue" role="alert">
         
 		{{ Session::get('success')}}
 	</div>
 @endif
+
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css">
 <link href="{{ asset('css/fixed.css') }}" rel="stylesheet" type="text/css" />
 <div class="row" align-text="center">
@@ -95,5 +107,6 @@
       </div>
 
 </footer>   
+@endguest
 @endsection  
 

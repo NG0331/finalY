@@ -96,7 +96,7 @@
                                         @endif
 
                                         
-                                        @if (Auth::user()->is_admin == 0)
+                                       
                                         <div class="dropdown-header" >Show Product</div>
                                         <a class="dropdown-item" href=" {{ route('products.List') }}">
                                         {{ __('New Book List') }}</a>
@@ -104,7 +104,7 @@
                                         <a class="dropdown-item" href=" {{ route('secondHand.List') }}">
                                         {{ __('Second Hand List') }}</a>
                                         
-                                        @endif
+                                       
 
                                         @if (Auth::user()->is_admin == 0)
                                         <div class="dropdown-divider"> </div>
