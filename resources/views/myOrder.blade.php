@@ -1,5 +1,22 @@
 @extends('layouts.app')
 @section('content')
+@guest
+@if (Route::has('login'))
+
+<script>
+    window.location.href='{{ route('login') }}'
+</script>
+
+@endif
+
+@elseif (Auth::user()->is_admin == 0)
+@if(Session::has('success'))
+	<div class="alert alert-success background-color=blue" role="alert">
+        
+		{{ Session::get('success')}}
+	</div>
+@endif
+
 
 <body style="background-color: lightcyan;">
 
@@ -56,4 +73,5 @@
 	</div>
 
 </body>
+@endguest
 @endsection

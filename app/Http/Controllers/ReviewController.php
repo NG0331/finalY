@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Models\Product; 
+use App\Models\Category;
 use App\Models\reviews; 
 Use Auth;
 Use Session;
@@ -25,9 +26,19 @@ class ReviewController extends Controller
             'ratingPoints'=>$r->ratingPoints,  
             'comment'=>$r->comment,
         ]); 
+       
         
 
         return redirect()->route('product.detail', ['id' => $r->productID]);
+    }
+    public function delete($id) {
+      
+        $r=request();    
+        $products=Product::all()->where('id',$id);
+        $review=reviews::find($id);
+        $review->delete();
+        
+        return redirect()->route('show.Product');
     }
 }
 

@@ -8,6 +8,7 @@
 
 @guest
 @if (Route::has('login'))
+
 <script>
     window.location.href='{{ route('login') }}'
 </script>
@@ -16,6 +17,8 @@
 
 @elseif (Auth::user()->is_admin == 0)
 @elseif (Auth::user()->is_admin == 1)
+
+
 @if(Session::has('success'))           
         <div class="alert alert-success" role="alert">
             {{ Session::get('success')}}
@@ -96,18 +99,19 @@
                     <br>
                     <input type="number" name="price" id="price" required>
                 </p>
-                
                 <p>
                     <label for="quantity" class="label">Quantity</label>
                     <br>
                     <input type="number" name="quantity" id="quantity" required>
                 </p>
-
+                
                 <p>
-                    <label for="pages" class="label">Pages</label>
+                    <label for="pages" class="label">Pages </label>
                     <br>
-                    <input type="number" name="pages" id="pages"required>
+                    <input type="number" name="pages" id="pages" required>
                 </p>
+
+               
                 
                     <label for="bookStatus" class="label">Book Status </label><br>
                     <p class="tabl">

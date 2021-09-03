@@ -79,9 +79,12 @@
                                             Admin
                                             @endif
                                             {{ Auth::user()->name }}
+                                            
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                      
+                                       
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
@@ -89,7 +92,7 @@
                                         </a>
                                         @if (Auth::user()->is_admin == 1)
                                         <div class="dropdown-divider"> </div>
-                                      
+                    
                                         <div class="dropdown-header" >Product Pending</div>
                                         <a class="dropdown-item" href="{{ route('showPending.Book') }}">
                                         {{ __('Pending Product') }}</a>
@@ -153,10 +156,11 @@
                                         
                                         <a class="dropdown-item" href=" {{ route('show.myOrder') }}">
                                         My Order </a>   
+                                        @endif
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                             @csrf
                                         </form>
-                                        @endif
+                                      
                                     </div>
                                 </li>
                             @endguest

@@ -18,9 +18,11 @@ body{
 .row{
     margin-top: 6%;
     margin-left:6%;
+    margin-bottom:15%;
 }
 
 .big-font{
+    font-family: 'Times New Roman', Times, serif;
     text-align: center;
     margin-top: 20px;
     font-size: 25px;
@@ -29,6 +31,7 @@ body{
 }
 
 .linkk{
+    font-family: 'Times New Roman', Times, serif;
     width: 20%;
     margin-top: -10px;
     height: 1%;
@@ -42,7 +45,9 @@ body{
     background-color: #383535;
     
 }
-
+.contanier{
+    font-family: 'Times New Roman', Times, serif;
+}
 
 .far{
     margin-left: -30%;
@@ -53,6 +58,7 @@ body{
     margin: 20px 20px 20px 20px;
 }
 .ffont{
+    font-family: 'Times New Roman', Times, serif;    
 color:white;
 font-size: 20px;
 }

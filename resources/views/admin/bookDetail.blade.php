@@ -74,8 +74,17 @@
                           @foreach($review as $reviews)
                           <blockquote class="blockquote">
                               <p class="mb-0">{{$reviews->comment}}</p>
-                              <p class="blockquote-footer">by:{{$reviews->userName}} | ★:{{$reviews->ratingPoints}}</p>  
+                              <p class="blockquote-footer">by:{{$reviews->userName}} | ★:{{$reviews->ratingPoints}}  
+                              
+                              
+                            
+                              <input type="hidden" name="productID" id="productID" value="{{$product->id}}">
+                              <input type="hidden" name="id" id="id" value="{{$product->id}}">
+                              
+                             <a href="{{ route('delete.Review', ['id' => $reviews->id]) }}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">Delete</a></p>  
+              
                           </blockquote>
+                         
                           @endforeach
                     </div>
                 </div>

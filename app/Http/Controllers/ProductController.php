@@ -209,4 +209,5 @@ class ProductController extends Controller
                                     ->with('productID',$id)
                                     ->with('categories',Category::all());
     }      
+   
 }
