@@ -90,7 +90,7 @@ Route::get('/deleteReview/{id}', [App\Http\Controllers\ReviewController::class, 
 Route::get('/paywithpaypal', [App\Http\Controllers\PaymentController::class, 'payWithPaypal'])->name('paywithpaypal');
 Route::post('/paypal', [App\Http\Controllers\PaymentController::class, 'payWithpaypal'])->name('paypal');
 
-Route::get('/pdfReport', [App\Http\Controllers\PDFController::class, 'pdfReport'])->name('pdfReport');
+
 
 Auth::routes();
 

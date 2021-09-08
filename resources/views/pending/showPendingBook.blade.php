@@ -54,8 +54,22 @@
                     <td style="max-width:300px">
                         <p class="text-muted">{{$product->description}}</p>
                     </td>   
+
                         <td>{{$product->userName}}</td>
-                        <td>{{$product->bookStatus}}</td>
+                        
+
+                        @if ($product ->bookStatus == "newBook")   
+                        <td>    
+                            New Book
+                        </td>
+                        @endif
+                       
+                        @if ($product ->bookStatus == "secondHand")   
+                        <td>    
+                           Second Hand Book
+                        </td>
+                        @endif 
+                                          
                         <td>{{$product->author}}</td>
                         <td>{{$product->categoryID}}</td>
                         <td>{{$product->languageID}}</td>

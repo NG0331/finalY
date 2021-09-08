@@ -58,7 +58,18 @@
                     <td>{{$product->categoryID}}</td>
                     <td>{{$product->languageID}}</td>
                     <td>{{$product->price}}</td>
-                    <td>{{$product->bookStatus}}</td>
+                    @if ($product ->bookStatus == "newBook")   
+                        <td>    
+                            New Book
+                        </td>
+                        @endif
+                       
+                        @if ($product ->bookStatus == "secondHand")   
+                        <td>    
+                           Second Hand Book
+                        </td>
+                        @endif 
+                   
                     <td>
                    
                         <a  href="{{ route('book.detail', ['id' => $product->id]) }}" class="btn btn-success">Information</a>
@@ -70,10 +81,7 @@
             </tbody>
         </table>
         
-        <div class="text-center">
-			<a href="{{ route('pdfReport') }}" class="btn btn-info">Download Product List</a>
-        </div>
-
+        
        
 
     </div>
