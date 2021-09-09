@@ -48,9 +48,6 @@ class UserController extends Controller
         return redirect()->route('show.Status');
     }
 
-    
-
-    
     public function showStatus() {
         $products=DB::table('products')
         ->select('products.*')

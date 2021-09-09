@@ -58,9 +58,8 @@ Route::get('/deleteProduct/{id}', [App\Http\Controllers\ProductController::class
 Route::post('/updateproduct', [App\Http\Controllers\ProductController::class, 'update'])->name('update.Product');
 Route::post('/searchproduct', [App\Http\Controllers\ProductController::class, 'search'])->name('search.product');
 
-
 Route::get('products/products', [App\Http\Controllers\ProductController::class, 'show'])->name('products.List');
-Route::get('products/secondHand', [App\Http\Controllers\ProductController::class, 'showSecondHand'])->name('secondHand.List');
+Route::get('products/secondHand', [App\Http\Controllers\SecondHandController::class, 'show'])->name('secondHand.List');
 Route::get('products/product_detail/{id}', [App\Http\Controllers\ProductController::class, 'showProductDetail'])->name('product.detail');
 
 //search function

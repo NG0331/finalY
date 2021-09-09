@@ -124,6 +124,7 @@ class ProductController extends Controller
             ->paginate(12);
             return view('admin/showProduct')->with('products',$products);
         }
+    
         
 
     public function edit($id) {
