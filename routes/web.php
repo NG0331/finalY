@@ -101,3 +101,7 @@ Route::get('pending/showPendingBook', [App\Http\Controllers\PendingController::c
 Route::get('/approvePending/{id}', [App\Http\Controllers\PendingController::class, 'approve'])->name('approve.Book');
 Route::get('/rejectPending/{id}', [App\Http\Controllers\PendingController::class, 'reject'])->name('reject.Book');
 Route::post('pending/searchUser', [App\Http\Controllers\PendingController::class, 'searchUser'])->name('search.user');
+
+Route::get('user/editProduct/{id}', [App\Http\Controllers\UserController::class, 'edit'])->name('edit.userProduct');
+Route::get('user/deleteProduct/{id}', [App\Http\Controllers\UserController::class, 'delete'])->name('delete.userProduct');
+Route::post('user/updateProduct', [App\Http\Controllers\UserController::class, 'update'])->name('update.userProduct');

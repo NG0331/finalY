@@ -40,6 +40,7 @@
                     <th>Category ID</th>
                     <th>Language ID</th>
                     <th>Price</th>
+                    <th>Pending</th>
                     <th>Action</th>
                     
                 </tr>
@@ -74,8 +75,15 @@
                            Reject
                         </td>
                         @endif 
-                   
-                </tr>
+                        @if ($product ->approve == 1)   
+                        <td>
+                        <a  href="{{ route('product.detail', ['id' => $product->id]) }}" class="btn btn-success">Information</a>
+                        <a href="{{route('edit.userProduct',['id' => $product->id])}}" class="btn btn-warning">Edit</i></a> 
+                        <a href="{{route('delete.userProduct',['id' => $product->id])}}" class="btn btn-danger" onclick="return confirm('Sure Want Delete?')">Delete</a>   
+                        </td>
+                        @endif 
+                    </tr>
+
                 @endforeach
             </tbody>
         </table>

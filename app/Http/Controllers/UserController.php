@@ -48,6 +48,44 @@ class UserController extends Controller
         return redirect()->route('show.Status');
     }
 
+    public function edit($id) {
+        $products=Product::all()->where('id',$id);
+        return view('user/editProduct')->with('products',$products)
+                                ->with('languages',Language::all())
+                                ->with('categories',Category::all());;
+    }
+
+    public function delete($id) {
+        $products=Product::find($id);
+        $products->delete();
+        return redirect()->route('show.Status');
+    }
+
+    public function update() {
+        $r=request();
+        $products=Product::find($r->ID);
+        if($r->file('product-image')!='') {
+            $image=$r->file('product-image');
+            $image->move('images',$image->getClientOriginalName());
+            $imageName=$image->getClientOriginalName();
+            $products->image=$imageName;
+        }
+        $products->bookName=$r->bookName;
+        $products->author=$r->author;
+        $products->publisher=$r->publisher;
+        $products->publishDate=$r->publishDate;
+        $products->description=$r->description;
+        $products->dimensions=$r->dimensions;
+        $products->languageID=$r->language;
+        $products->categoryID=$r->category;
+        $products->price=$r->price;
+        $products->quantity=$r->quantity;
+        $products->pages=$r->pages;
+        $products->bookStatus=$r->pages;
+        $products->save();
+        return redirect()->route('show.Status');
+    }
+
     public function showStatus() {
         $products=DB::table('products')
         ->select('products.*')
