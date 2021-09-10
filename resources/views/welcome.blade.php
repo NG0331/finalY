@@ -97,7 +97,7 @@ text-decoration: underline;
 </div>
 
 <div >
-        <a href="{{ route('user.Product') }}" class="button">Continue</a>
+        <a href="{{ route('home') }}" class="button">Continue</a>
     </div>
 
 
