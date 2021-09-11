@@ -56,6 +56,10 @@
                         <ul class="navbar-nav ml-auto"  style="float: right;">
                             <!-- Authentication Links -->
                             
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/products') }}">{{ __('Home') }}</a>
+                        </li>
+                            
                             <li class="nav-item">
                                 <a class="nav-link"href="{{ route('user.Product') }}">{{ __('Home') }}</a>
                             </li>
