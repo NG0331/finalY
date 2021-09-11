@@ -63,7 +63,6 @@ Route::get('products/secondHand', [App\Http\Controllers\SecondHandController::cl
 Route::get('products/product_detail/{id}', [App\Http\Controllers\ProductController::class, 'showProductDetail'])->name('product.detail');
 
 //search function
-
 Route::get('/search',[App\Http\Controllers\ProductController::class, 'index'])->name('search');
 Route::get('/autocomplete',[App\Http\Controllers\ProductController::class, 'autocomplete'])->name('autocomplete');
 

@@ -161,7 +161,6 @@ class PaymentController extends Controller
             $email='goh09282000@gmail.com';
 	        Notification::route('mail', $email)->notify(new \App\Notifications\orderPaid($email));
             return Redirect::to('products');  //back to product page
-
         }
 
         Session::put('error', 'Payment failed');
