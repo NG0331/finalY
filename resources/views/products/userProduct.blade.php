@@ -83,6 +83,7 @@
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
                             <!-- Authentication Links -->
+                      
                             
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
@@ -125,6 +126,11 @@
                                         <a class="dropdown-item" href="{{ url('/pending/showPendingBook') }}">
                                         {{ __('Pending Product') }}</a>
                                         @endif
+
+                                        <div class="dropdown-header" >Messager</div>
+                                          <a class="dropdown-item" href="{{ route(config('chatify.routes.prefix')) }}">{{ __('Inbox Box') }}</a>
+
+                                        
 
                                        
                                         <div class="dropdown-header" >Show Product</div>
