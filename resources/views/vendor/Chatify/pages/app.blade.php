@@ -1,5 +1,9 @@
+
 @include('Chatify::layouts.headLinks')
-<div class="messenger">
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css">
+
+<div class="messenger" style="margin-top: 45px">
     {{-- ----------------------Users/Groups lists side---------------------- --}}
     <div class="messenger-listView">
         {{-- Header and search bar --}}
@@ -115,6 +119,149 @@
         {!! view('Chatify::layouts.info')->render() !!}
     </div>
 </div>
+<ul style=" margin-top: -780px;width:103%;margin-left: -45px;">
+  <nav class=" navbar navbar-expand-md bg-dark navbar-dark shadow-sm" >
+                <div class="container-fluid toop">
+                    <a class="navbar-brand" href="{{url('/')}}">
+                        <img src="{{ asset('images/icon.png')}}" width="35" height="35" class="d-inline-block align-top" alt="">
+                        &nbsp; BookShop
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!-- Left Side Of Navbar -->
+
+                        <ul class="navbar-nav mr-auto">
+                            <form class="form-inline active-cyan-4" action="{{ route('search.product') }}" method="post">
+                                    @csrf
+                                    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="search product"
+                                        aria-label="Search" name="searchProduct" id="searchProduct">
+                            </form>
+                        
+                        </ul>
+                            
+                        <!-- Right Side Of Navbar -->
+                        <ul class="navbar-nav ml-auto">
+                            <!-- Authentication Links -->
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
+                            </li>
+
+                            @guest
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    </li>
+                                @endif
+                                
+                                @if (Route::has('register'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    </li>
+                                @endif
+                            @else
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        @if (Auth::user()->admin == 1)
+                                            Admin
+                                            @endif
+                                            {{ Auth::user()->name }}
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <div class="dropdown-divider"> </div>
+                                      
+                                        <div class="dropdown-header" >Message </div>
+                                        <a class="dropdown-item" href="{{route(config('chatify.routes.prefix')) }}">
+                                        {{ __('Inbox box') }}</a>
+                                       
+
+                                        @if (Auth::user()->is_admin == 1)
+                                        <div class="dropdown-divider"> </div>
+                                      
+                                        <div class="dropdown-header" >Product Pending</div>
+                                        <a class="dropdown-item" href="{{ url('/pending/showPendingBook') }}">
+                                        {{ __('Pending Product') }}</a>
+                                        @endif
+
+                                       
+                                        <div class="dropdown-header" >Show Product</div>
+                                        <a class="dropdown-item" href=" {{ route('products.List') }}">
+                                        {{ __('Products List') }}</a>
+                                        <a class="dropdown-item" href=" {{ route('secondHand.List') }}">
+                                        {{ __('Second Hand List') }}</a>
+
+                                        @if (Auth::user()->is_admin == 0)
+                                            <div class="dropdown-divider"> </div>
+                                            <div class="dropdown-header" >Insert Your Book</div>
+                                            <a class="dropdown-item" href="{{ route('user.insert') }}">
+                                            {{ __('Insert Book') }}</a>
+                                            <a class="dropdown-item" href="{{ route('show.Status') }}">
+                                            {{ __('Book Status') }}</a>
+                                        @endif
+                                      
+                                     
+                                        
+                                        @if (Auth::user()->is_admin == 1)
+                                        <div class="dropdown-divider"> </div>
+                                        <div class="dropdown-header" >Insert Book</div>
+                                     
+                                        <a class="dropdown-item" href="{{ route('insert.Product') }}">
+                                        {{ __('Insert Product') }}</a>
+                                      
+                                                  
+                                        <a class="dropdown-item" href="  {{ route('insert.Language') }}">
+                                        {{ __('Insert Language') }}</a>
+                                      
+                                        <a class="dropdown-item" href="{{ route('insert.Category') }}">
+                                        {{ __('Insert Category') }}</a>   
+                                        
+
+                                        <div class="dropdown-divider"> </div>
+                                        <div class="dropdown-header" >Show Book</div>
+                                       
+                                        <a class="dropdown-item" href="  {{ route('show.Product') }}">
+                                        Show Book </a>   
+                                        
+                                        <a class="dropdown-item" href=" {{ route('show.Language') }}">
+                                        Show Language </a>   
+                                    
+                                        <a class="dropdown-item" href=" {{ route('show.Category') }}">
+                                        Show Category </a> 
+
+                                        @endif
+                                        @if (Auth::user()->is_admin == 0)
+
+                                        <div class="dropdown-divider"> </div>
+                                        <div class="dropdown-header" >My Order</div>
+                                       
+                                        <a class="dropdown-item" href=" {{ route('show.myCart') }}">
+                                        My Cart </a>   
+                                        
+                                        <a class="dropdown-item" href=" {{ route('show.myOrder') }}">
+                                        My Order </a>   
+                                        @endif
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                            @endguest
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+  </ul>
 @include('Chatify::layouts.modals')
 @include('Chatify::layouts.footerLinks')
+
+
