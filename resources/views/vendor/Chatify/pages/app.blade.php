@@ -2,7 +2,7 @@
 @include('Chatify::layouts.headLinks')
 
 
-<link href="{{ asset('css/chatify/app1.css') }}" rel="stylesheet">
+
 
 <div class="messenger" style="margin-top:60px">
     {{-- ----------------------Users/Groups lists side---------------------- --}}
