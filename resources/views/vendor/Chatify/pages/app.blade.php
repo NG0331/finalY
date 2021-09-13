@@ -1,7 +1,7 @@
 
 @include('Chatify::layouts.headLinks')
 
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css">
+
 <link href="{{ asset('css/chatify/app1.css') }}" rel="stylesheet">
 
 <div class="messenger" style="margin-top:60px">
