@@ -2,8 +2,9 @@
 @include('Chatify::layouts.headLinks')
 
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css">
+<link href="{{ asset('css/chatify/app1.css') }}" rel="stylesheet">
 
-<div class="messenger" style="margin-top: 45px">
+<div class="messenger" style="margin-top:60px">
     {{-- ----------------------Users/Groups lists side---------------------- --}}
     <div class="messenger-listView">
         {{-- Header and search bar --}}
@@ -119,7 +120,8 @@
         {!! view('Chatify::layouts.info')->render() !!}
     </div>
 </div>
-<ul style=" margin-top: -780px;width:103%;margin-left: -45px;">
+
+<ul style=" margin-top: -800px;width:103%;margin-left: -45px;">
   <nav class=" navbar navbar-expand-md bg-dark navbar-dark shadow-sm" >
                 <div class="container-fluid toop">
                     <a class="navbar-brand" href="{{url('/')}}">
@@ -133,17 +135,10 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
 
-                        <ul class="navbar-nav mr-auto">
-                            <form class="form-inline active-cyan-4" action="{{ route('search.product') }}" method="post">
-                                    @csrf
-                                    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="search product"
-                                        aria-label="Search" name="searchProduct" id="searchProduct">
-                            </form>
-                        
-                        </ul>
+                       
                             
                         <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto">
+                        <ul class="navbar-nav ml-auto"  style="float: right;">
                             <!-- Authentication Links -->
                             
                             <li class="nav-item">
