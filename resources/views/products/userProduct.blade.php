@@ -134,7 +134,7 @@
                                        
                                         <div class="dropdown-header" >Show Product</div>
                                         <a class="dropdown-item" href=" {{ route('products.List') }}">
-                                        {{ __('Products List') }}</a>
+                                        {{ __('New Book List') }}</a>
                                         <a class="dropdown-item" href=" {{ route('secondHand.List') }}">
                                         {{ __('Second Hand List') }}</a>
 
