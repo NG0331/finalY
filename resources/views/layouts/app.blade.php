@@ -93,7 +93,7 @@
 
                                         <div class="dropdown-header" >Message </div>
                                         <a class="dropdown-item" href="{{route(config('chatify.routes.prefix')) }}">
-                                        {{ __('Inbox box') }}</a>
+                                        {{ __('Inbox') }}</a>
                                         
                                         @if (Auth::user()->is_admin == 1)
                                         <div class="dropdown-divider"> </div>

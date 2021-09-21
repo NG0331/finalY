@@ -32,15 +32,12 @@
             <thead id="table-head">
                 <tr>
                     <th>ID</th> 
-                    <th>BookName</th>
+                    <th>Book Name</th>
                     <th>Image</th>
-                    <th>Description</th>
-                    <th>User Name</th>
-                    <th>Author</th>
-                    <th>Category ID</th>
-                    <th>Language ID</th>
+                    <th>Description</th>                   
+                    <th>Author</th>                    
                     <th>Price</th>
-                    <th>Pending</th>
+                    <th>Status</th>
                     <th>Action</th>
                     
                 </tr>
@@ -55,10 +52,8 @@
                     <td style="max-width:300px">
                         <p class="text-muted">{{$product->description}}</p>
                     </td>   
-                        <td>{{$product->userName}}</td>
+                        
                         <td>{{$product->author}}</td>
-                        <td>{{$product->categoryID}}</td>
-                        <td>{{$product->languageID}}</td>
                         <td>{{$product->price}}</td>
                         @if ($product ->approve == 0)   
                         <td>    
